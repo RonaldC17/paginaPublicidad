@@ -52,7 +52,9 @@
                 <sup class="text-muted">$</sup>
                 <span class="precio">{{ card.price }}</span>
               </div>
-              <hr class="mx-xs-auto ml-lg-15 mr-lg-15 ml-xs-1 mr-xs-1 divisor"/>
+              <hr
+                class="mx-xs-auto ml-lg-15 mr-lg-15 ml-xs-1 mr-xs-1 divisor"
+              />
               <p class="mt-5 descripcionmd">{{ card.desc }}</p>
               <p class="mt-5 descripcionmd">{{ card.desc1 }}</p>
               <p class="mt-5 descripcionmd">{{ card.desc2 }}</p>
@@ -60,7 +62,7 @@
             </div>
             <hr class="ml-lg-15 mr-lg-15 divisor" />
             <div class="text-center mt-lg-10">
-              <v-btn class="boton mx-auto">
+              <v-btn class="boton mx-auto" @click="openWhatsApp(card.title)">
                 <p>Escoger Plan</p>
               </v-btn>
             </div>
@@ -113,8 +115,8 @@
               <p class="mt-5 descripciondw">{{ card.desc3 }}</p>
             </div>
             <hr class="ml-lg-15 mr-lg-15 divisor" />
-            <div class="text-center mt-lg-6">
-              <v-btn class="boton mx-auto">
+            <div class="text-center mt-lg-5">
+              <v-btn class="boton mx-auto" @click="openWhatsApp(card.title)">
                 <p>Escoger Plan</p>
               </v-btn>
             </div>
@@ -136,9 +138,12 @@ export default {
           price: "500.000",
           plan: "Mensual",
           desc: "Potencia tu negocio con la gestión de Google Ads.",
-          desc1: "Crea anuncios efectivos en Google Ads para destacar tu negocio.",
-          desc2: "Aprovecha la publicidad de pago en Google Ads para llegar a tu audiencia objetivo.",
-          desc3: "Realizamos un seguimiento exhaustivo de tu empresa en Google Ads para garantizar resultados óptimos."
+          desc1:
+            "Crea anuncios efectivos en Google Ads para destacar tu negocio.",
+          desc2:
+            "Aprovecha la publicidad de pago en Google Ads para llegar a tu audiencia objetivo.",
+          desc3:
+            "Realizamos un seguimiento exhaustivo de tu empresa en Google Ads para garantizar resultados óptimos.",
         },
         {
           img: "google.png",
@@ -146,9 +151,12 @@ export default {
           price: "500.000",
           plan: "Mensual",
           desc: "Potencia tu negocio con la gestión de Google Ads.",
-          desc1: "Crea anuncios efectivos en Google Ads para destacar tu negocio.",
-          desc2: "Aprovecha la publicidad de pago en Google Ads para llegar a tu audiencia objetivo.",
-          desc3: "Realizamos un seguimiento exhaustivo de tu empresa en Google Ads para garantizar resultados óptimos."
+          desc1:
+            "Crea anuncios efectivos en Google Ads para destacar tu negocio.",
+          desc2:
+            "Aprovecha la publicidad de pago en Google Ads para llegar a tu audiencia objetivo.",
+          desc3:
+            "Realizamos un seguimiento exhaustivo de tu empresa en Google Ads para garantizar resultados óptimos.",
         },
         {
           img: "media.png",
@@ -157,8 +165,10 @@ export default {
           plan: "Mensual",
           desc: "Gestión profesional de tus redes sociales.",
           desc1: "Creación de anuncios en las redes sociales mediante ADS.",
-          desc2: "Potencia tu alcance con publicidad pagada en las redes sociales mediante ADS.",
-          desc3: "Realizamos un seguimiento detallado en las redes sociales mediante ADS para maximizar los resultados."
+          desc2:
+            "Potencia tu alcance con publicidad pagada en las redes sociales mediante ADS.",
+          desc3:
+            "Realizamos un seguimiento detallado en las redes sociales mediante ADS para maximizar los resultados.",
         },
       ],
       pricePlan1: [
@@ -167,9 +177,12 @@ export default {
           title: "Landing Page",
           price: "500.000",
           desc: "Crea una página web cautivadora para atraer a tus clientes de manera efectiva.",
-          desc1: "Realizamos un seguimiento constante para asegurar el máximo rendimiento de tu página web.",
-          desc2: "Incluye hosting y dominio configurado (cubierto por la empresa dueña).",
-          desc3: "Entregamos una página web completa, junto con copias de seguridad y documentación detallada."
+          desc1:
+            "Realizamos un seguimiento constante para asegurar el máximo rendimiento de tu Landing Page",
+          desc2:
+            "Incluye hosting y dominio configurado (cubierto por la empresa dueña).",
+          desc3:
+            "Entregamos una página web completa, junto con copias de seguridad y documentación detallada.",
         },
         {
           img: "fotomorada2.png",
@@ -177,31 +190,47 @@ export default {
           price: "500.000",
 
           desc: "Destaca tu negocio con una página web profesional para mostrar a tus clientes",
-          desc1: "Realizamos un seguimiento constante para asegurar el máximo rendimiento de tu página web.",
-          desc2: "Incluye hosting y dominio configurado (cubierto por la empresa dueña).",
-          desc3: "Entregamos una página web completa, junto con copias de seguridad y documentación detallada."
+          desc1:
+            "Realizamos un seguimiento constante para asegurar el máximo rendimiento de tu página web profesional",
+          desc2:
+            "Incluye hosting y dominio configurado (cubierto por la empresa dueña).",
+          desc3:
+            "Entregamos una página web completa, junto con copias de seguridad y documentación detallada.",
         },
         {
           img: "carromorado.png",
           title: "Tienda Online",
           price: "800.000",
           desc: "Impulsa las ventas de tus productos con una página web personalizada.",
-          desc1: "Realizamos un seguimiento constante para asegurar el éxito de tu página web.",
-          desc2: "Incluye hosting y dominio configurado (cubierto por la empresa dueña).",
-          desc3: "Te proporcionamos una página completa, copias de seguridad y documentación detallada." 
+          desc1:
+            "Realizamos un seguimiento constante para asegurar el máximo rendimiento de tu tienda online",
+          desc2:
+            "Incluye hosting y dominio configurado (cubierto por la empresa dueña).",
+          desc3:
+            "Te proporcionamos una página completa, junto con copias de seguridad y documentación detallada.",
         },
       ],
     };
+  },
+  methods: {
+    openWhatsApp(title) {
+      const baseWhatsappLink =
+        "https://api.whatsapp.com/send?phone=+573238146440&text=";
+      const whatsappMessage = encodeURIComponent(
+        `¡Hola! Estoy interesado en el plan ${title} que ofrecen.`
+      );
+      const link = `${baseWhatsappLink}${whatsappMessage}`;
+      window.open(link, "_blank");
+    },
   },
 };
 </script>
 
 <style scoped>
 .containerplanes {
-  background: #ffffff;
+  background: #dfe3e4;
   background-size: cover;
   background-repeat: no-repeat;
-  
 }
 .tituloplanes h2 {
   font-size: 40px;
@@ -232,8 +261,6 @@ export default {
   font-size: 35px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
-
 
 .boton p {
   font-size: 15px;
@@ -297,7 +324,7 @@ export default {
 
   .descripcionmd {
     font-size: 12px;
-    margin-left: 10px ;
+    margin-left: 10px;
     margin-right: 10px;
   }
 
@@ -546,7 +573,7 @@ export default {
 
 @media screen and (min-width: 961px) and (max-width: 1023px) {
   .titulos {
-    font-size: .9em;
+    font-size: 0.9em;
     font-family: monospace;
     font-weight: bold;
   }
@@ -613,7 +640,7 @@ export default {
     height: 60px;
   }
 
-  .titulocardplanes{
+  .titulocardplanes {
     font-size: 1.5em;
   }
 }
@@ -709,7 +736,6 @@ export default {
     box-shadow: 0 20px 55px rgba(0, 0, 0, 0.1);
     transition: all 0.8s ease;
     height: 800px;
-
   }
 
   .pricing-card:hover {
@@ -748,7 +774,6 @@ export default {
     border-radius: 50px;
     background-color: #2c015a;
     transition: all 0.8s ease;
-
   }
 
   .boton:hover {

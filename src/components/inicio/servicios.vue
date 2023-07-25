@@ -354,7 +354,7 @@ export default {
     transform: translateY(-10px);
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1200px) {
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
   .cajaservicios {
     height: 750px;
   }
@@ -415,7 +415,7 @@ export default {
   }
 
   .textoservicios {
-    font-size: 20px;
+    font-size: 1.1rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #000000;
   }
@@ -426,12 +426,12 @@ export default {
   }
 
   .subtituloservicios {
-    margin: 40px auto;
+    margin: 50px auto;
     width: max-content;
     white-space: nowrap;
     border-right: 2px solid;
     font-family: monospace;
-    font-size: 2rem;
+    font-size: 1.8rem;
     animation: efecto 3s steps(16), efecto1 1s step-end infinite alternate;
   }
 

@@ -6,7 +6,7 @@
           <v-col cols="12" md="12" lg="6">
             <div class="ml-5 mr-5 mt-xs-5">
               <v-btn
-                to="/"
+                href="https://wa.link/6zajnu"
                 variant="outlined"
                 color="white"
                 id="botoninformacion"

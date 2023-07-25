@@ -4,7 +4,7 @@
       <v-row no-gutters>
         <v-col cols="12" md="6" lg="6" class="d-flex">
           <v-img
-            src="../../assets/portfolio/variadas/img1.jpg"
+            src="../../assets/portfolio/variadas/nosotros1.png"
             class="fotonosotros"
           ></v-img>
         </v-col>
@@ -20,9 +20,9 @@
               <h4 class="sobrenosotros-title">Sobre nuestro Trabajo</h4>
             </div>
             <div class="mt-lg-10 mt-xs-n10 mb-sm-n10">
-              <h6 class="sobrenosotros-description">
-                Somos una agencia publicitaria dedicada a promocionar su negocio de manera efectiva. Nuestro enfoque principal es brindar servicios de alta calidad, accesibles y adaptados a las necesidades de nuestros clientes. Valoramos la opinión de nuestros clientes y nos esforzamos por satisfacer sus expectativas. En nuestra agencia, creemos en el lema "Siempre escuchamos a nuestros clientes" para asegurarnos de ofrecer soluciones publicitarias que se ajusten a sus requerimientos. Estamos comprometidos en brindar un servicio excepcional y resultados exitosos para impulsar el crecimiento de su negocio.
-              </h6>
+              <h5 class="sobrenosotros-description">
+                Somos una agencia publicitaria comprometida con promocionar su negocio de manera efectiva. Ofrecemos servicios de alta calidad y personalizados, adaptados a las necesidades de nuestros clientes. Valoramos sus opiniones y buscamos superar sus expectativas. Nuestro lema es "Siempre escuchamos a nuestros clientes", para ofrecer soluciones publicitarias precisas y exitosas. Trabajamos para impulsar el crecimiento de su negocio con resultados excepcionales.
+              </h5>
             </div>
           </div>
         </v-col>
@@ -42,7 +42,7 @@ export default {
 
 <style>
 .cajanosotros {
-  background: #dfe3e4;
+  background: #303c36;
   
 }
 
@@ -204,20 +204,23 @@ export default {
 @media screen and (min-width: 1200px) and (max-width: 1440px) {
   .sobrenosotros-title {
     font-size: 2vw;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #000000;
-    
+    font-family: monospace;
+    color: #ffffff;
     margin-top: 100px;
   }
   .sobrenosotros-description {
-    font-size: 1.5vw;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #000000;
-    margin-top: 50px;
+    font-size: 1.3vw;
+    font-family: monospace;
+    color: #ffffff;
+    margin-top: 40px;
     margin-bottom: 100px;
   }
   .cajanosotros {
     max-height: 100%;
+  }
+  .fotonosotros{
+    width: 100%;
+    height: 300px;
   }
 }
 

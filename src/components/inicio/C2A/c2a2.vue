@@ -11,7 +11,7 @@
                     <v-col cols="12" md="12" lg="12" xl="12" class="text-center">
                         <div class="ml-5 mr-5  p-2">
                             <v-btn
-                                to="/"
+                                href="https://wa.link/6zajnu"
                                 variant="outlined"
                                 class="botonc2a2"
                                 id="botoninformacion">

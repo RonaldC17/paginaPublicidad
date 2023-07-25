@@ -14,7 +14,6 @@
             <div class="ml-lg-n10">
               <v-text-field
                 v-model="name.value.value"
-                :counter="25"
                 :error-messages="name.errorMessage.value"
                 label="Nombre"
                 prepend-inner-icon="mdi mdi-account-edit"
@@ -28,7 +27,6 @@
             <div class="mr-lg-n10">
               <v-text-field
                 v-model="lastname.value.value"
-                :counter="20"
                 :error-messages="lastname.errorMessage.value"
                 label="Apellidos"
                 variant="solo"
@@ -45,7 +43,6 @@
             <div class="ml-lg-n10">
               <v-text-field
                 v-model="phone.value.value"
-                :counter="10"
                 :error-messages="phone.errorMessage.value"
                 label="Número de Celular"
                 class="ml-lg-n16 custom-text-field"

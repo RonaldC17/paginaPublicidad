@@ -1,7 +1,6 @@
 <template>
   <div>
     <MyMenu></MyMenu>
-    <C2a1></C2a1>
     <Nosotros></Nosotros>
     <Servicios></Servicios>
     <Planes></Planes>
