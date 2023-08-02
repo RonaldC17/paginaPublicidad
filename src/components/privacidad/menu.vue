@@ -115,12 +115,12 @@ header {
 }
 
 header.abajo {
-  background: #dfe3e4;;
+  background: #eceff1;
   padding: 5px 10px;
 }
 
 .siguiente {
-  background: url("../../assets/portfolio/Banners/inicio.png");
+  background: url("../../assets/portfolio/Banners/privacidad.png");
   background-size: cover;
   background-position: center;
   min-height: 100vh;
@@ -172,7 +172,7 @@ header.abajo {
   }
 
   .siguiente {
-    background: url("../../assets/portfolio/Banners/inicio.png");
+    background: url("../../assets/portfolio/Banners/privacidad.png");
     background-size: cover;
     background-position: center;
     min-height: 100vh;
@@ -264,7 +264,7 @@ header.abajo {
   }
 
   .siguiente {
-    background: url("../../assets/portfolio/Banners/inicio.png");
+    background: url("../../assets/portfolio/Banners/privacidad.png");
     background-size: cover;
     background-position: center;
     min-height: 100vh;
@@ -311,7 +311,7 @@ header.abajo {
   }
 
   .siguiente {
-    background: url("../../assets/portfolio/Banners/inicio.png");
+    background: url("../../assets/portfolio/Banners/privacidad.png");
     background-size: cover;
     background-position: center;
     min-height: 100vh;
@@ -356,7 +356,7 @@ header.abajo {
   }
 
   .siguiente {
-    background: url("../../assets/portfolio/Banners/inicio.png");
+    background: url("../../assets/portfolio/Banners/privacidad.png");
     background-size: cover;
     background-position: center;
     min-height: 100vh;
@@ -403,7 +403,7 @@ header.abajo {
   }
 
   .siguiente {
-    background: url("../../assets/portfolio/Banners/inicio.png");
+    background: url("../../assets/portfolio/Banners/privacidad.png");
     background-size: cover;
     background-position: center;
     min-height: 100vh;
@@ -463,12 +463,12 @@ header.abajo {
   }
 
   header.abajo {
-    background: #dfe3e4;;
+    background: #eceff1;
     padding: 10px 30px;
   }
 
   .siguiente {
-    background: url("../../assets/portfolio/Banners/inicio.png");
+    background: url("../../assets/portfolio/Banners/privacidad.png");
     background-size: cover;
     background-position: center;
     min-height: 100vh;
@@ -491,9 +491,19 @@ header.abajo {
   }
 }
 @media screen and (min-width: 1441px) and (max-width: 2560px) {
-  * {
-    margin: 0;
-    padding: 0;
+  .logo {
+    width: 100%;
+    height: 100px;
+  }
+
+  .menunormal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .iconohamburguesa {
+    float: right;
   }
 
   header {
@@ -504,60 +514,36 @@ header.abajo {
     display: flex;
     justify-content: space-around;
     transition: 0.7s;
-    padding: 30px 10px;
+    padding: 10px 10px;
     z-index: 20;
+    transition: 0.5s;
   }
 
   header.abajo {
-    background: #a6a6a6;
-    padding: 20px 15px;
-  }
-
-  header.abajo ul li .nav-link {
-    color: black;
-  }
-  header .imagen {
-    position: relative;
-  }
-
-  nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  header ul {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  header ul li .nav-link {
-    position: relative;
-    margin: 0 15px;
-    text-decoration: none;
-    color: #fff;
-    letter-spacing: 2px;
-    font-weight: 600;
-    transition: 0.7s;
+    background: #eceff1;
+    padding: 10px 30px;
   }
 
   .siguiente {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: url("../../assets/portfolio/Banners/portafolio.png");
+    background: url("../../assets/portfolio/Banners/privacidad.png");
     background-size: cover;
-    background-position: center center;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 
-  .menunormal {
-    font-size: 30px;
-    transform: translateX(-10vh);
+  .botonesmenu a {
+    font-family: "Lato Black", sans-serif;
+    font-weight: bold;
+    text-decoration: none;
   }
 
-  .menu-hamburguesa {
+  .botonesmenu a:hover {
+    color: #07a5c3;
+  }
+
+  .contenedorhamb {
     display: none;
   }
 }

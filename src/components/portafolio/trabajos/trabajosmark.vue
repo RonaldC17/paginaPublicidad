@@ -42,6 +42,15 @@
             </v-card>
           </v-col>
         </v-row>
+        <!-- <v-row justify="center" no-gutters>
+          <v-col cols="12" md="12" lg="12" xl="12">
+            <div class="text-center">
+              <router-link to="/todoslostrabajos">
+                <v-btn color="primary">Ver Proyectos</v-btn>
+              </router-link>
+            </div>
+          </v-col>
+        </v-row> -->
       </v-container>
     </div>
   </div>
@@ -60,13 +69,13 @@ export default {
         },
         {
           img: "img2.jpg",
-          title: "",
-          subtext: "Empresa",
+          title: "Tienda Drip Gang",
+          subtext: "Tienda de Ropa",
         },
         {
           img: "img3.jpg",
-          title: "Comunity Manager",
-          subtext: "Empresa",
+          title: "Sinnergy12",
+          subtext: "Venta de Cannabis Medicinal",
         },
       ],
 
@@ -81,15 +90,13 @@ export default {
           img: "img5.jpg",
           title: "Página web Profesional",
           subtext: "$750.000",
-          description:
-            "Desarrollo de una Página Web Profesional para tu negocio",
+          description: "Desarrollo de una Página Web Profesional para tu negocio",
         },
         {
           img: "img6.jpg",
           title: "E-Commerce",
           subtext: "$1.000.000",
-          description:
-            "Desarrollo de una Tienda Online - E-Commerce para tu negocio",
+          description: "Desarrollo de una Tienda Online - E-Commerce para tu negocio",
         },
       ],
     };

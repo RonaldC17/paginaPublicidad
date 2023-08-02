@@ -15,7 +15,7 @@
         <v-col cols="12" md="6" lg="6">
           <div class="text-center">
             <v-img
-              src="../../../assets/portfolio/Banners/bannergris.jpg"
+              src="../../../assets/portfolio/variadas/losmejores1.png"
               class="fototrabajos"
             ></v-img>
           </div>
@@ -43,7 +43,7 @@
 
 .tituloport {
   animation: fadeIn 1s ease-in-out;
-  font-size: 25px;
+  font-size: 2rem;
   font-family: monospace;
   color: #ffffff;
 }
@@ -51,6 +51,7 @@
 .tituloport {
   animation: tituloport 2.5s linear both;
 }
+
 @keyframes tituloport {
   0% {
     letter-spacing: -0.2em;

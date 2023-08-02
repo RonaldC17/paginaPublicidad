@@ -2,7 +2,7 @@
   <div class="cajanosotros">
     <v-container>
       <v-row no-gutters>
-        <v-col cols="12" md="6" lg="6" class="d-flex">
+        <v-col cols="12" md="12" lg="6" class="">
           <v-img
             src="../../assets/portfolio/variadas/nosotros1.png"
             class="fotonosotros"
@@ -10,7 +10,7 @@
         </v-col>
         <v-col
           cols="12"
-          md="6"
+          md="12"
           lg="6"
           class="d-flex"
           style="align-items: center"
@@ -40,12 +40,11 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .cajanosotros {
   background: #303c36;
   
 }
-
 .sobrenosotros-title {
   font-size: 20px;
   font-weight: bold;
@@ -58,6 +57,10 @@ export default {
   font-size: 15px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #000000;
+}
+
+.cajanosotros{
+  height: auto;
 }
 
 /* Pantallas Menores a 320px */
@@ -80,133 +83,161 @@ export default {
 
 /* Pantallas entre 321 y 480px */
 @media screen and (min-width: 321px) and (max-width: 480px) {
-  .sobrenosotros {
-    width: 100px;
-    height: 100px;
-  }
   .sobrenosotros-title {
-    font-size: 4vw;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #000000;
+    font-size: 1.5rem;
+    font-family: monospace;
+    color: #ffffff;
     margin-top: 10px;
   }
   .sobrenosotros-description {
-    font-size: 3vw;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #000000;
+    font-size: 1rem;
+    font-family: monospace;
+    color: #ffffff;
     margin-top: 30px;
     margin-left: 25px;
     margin-right: 25px;
     margin-bottom: 20px;
+  }
+
+  .fotonosotros{
+    width: 100%;
+    height: 100px;
   }
 }
 
 /* Pantallas de 481 a 599px */
 @media screen and (min-width: 481px) and (max-width: 599px) {
   .sobrenosotros-title {
-    font-size: 5vw;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #000000;
+    font-size: 1.5rem;
+    font-family: monospace;
+    color: #ffffff;
     margin-top: 10px;
   }
   .sobrenosotros-description {
-    font-size: 3.1vw;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #000000;
+    font-size: 1rem;
+    font-family: monospace;
+    color: #ffffff;
     margin-top: 30px;
     margin-left: 25px;
     margin-right: 25px;
     margin-bottom: 20px;
+  }
+  .fotonosotros{
+    width: 100%;
+    height: 150px;
   }
 }
 
 /* Pantallas de 600px a 768px */
 @media screen and (min-width: 600px) and (max-width: 768px) {
   .sobrenosotros-title {
-    font-size: 4vw;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #000000;
-    margin-bottom: 50px;
+    font-size: 1.5rem;
+    font-family: monospace;
+    color: #ffffff;
+    margin-top: 10px;
   }
   .sobrenosotros-description {
-    font-size: 2.5vw;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #000000;
+    font-size: 1rem;
+    font-family: monospace;
+    color: #ffffff;
     margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 50px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 20px;
   }
   .cajanosotros {
-    max-height: 100%;
+    height: 480px;
+  }
+  .fotonosotros{
+    width: 100%;
+    height: 200px;
   }
 }
 
-@media screen and (min-width: 769px) and (max-width: 958px) {
-  
+@media screen and (min-width: 769px) and (max-width: 959px) {
   .sobrenosotros-title {
-    font-size: 2em;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #000000;
-    
+    font-size: 1.5rem;
+    font-family: monospace;
+    color: #ffffff;
+    margin-top: 10px;
   }
   .sobrenosotros-description {
-    font-size: 1.1em;
+    font-size: 1rem;
     font-family: monospace;
-    color: #000000;
-    margin-left: 25px;
-    margin-right: 25px;
-    margin-bottom: 50px;
-
-  }
-
-}
-
-/* Pantallas de 961 a 1023px */
-@media screen and (min-width: 959px) and (max-width: 1023px) {
-  .sobrenosotros-title {
-    font-size: 2em;
-    font-family: monospace;
-    color: #000000;
-  }
-  .sobrenosotros-description {
-    font-size: 1.1em;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #000000;
+    color: #ffffff;
     margin-top: 30px;
     margin-left: 25px;
     margin-right: 25px;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
+  }
+  .cajanosotros {
+    height: 500px;
+  }
+  .fotonosotros{
+    width: 100%;
+    height: 250px;
+  }
+}
+
+/* Pantallas de 959 a 1023px */
+@media screen and (min-width: 960px) and (max-width: 1023px) {
+  .sobrenosotros-title {
+    font-size: 2rem;
+    font-family: monospace;
+    color: #ffffff;
+    margin-top: 10px;
+  }
+  .sobrenosotros-description {
+    font-size: 1.5rem;
+    font-family: monospace;
+    color: #ffffff;
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+  }
+  .cajanosotros {
+    height: 650px;
+  }
+  .fotonosotros{
+    width: 100%;
+    height: 250px;
   }
 }
 
 /* Pantallas de 1024 a 1199px */
-@media screen and (min-width: 1024px) and (max-width: 1199px) {
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
   .sobrenosotros-title {
-    font-size: 3vw;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #000000;
-    margin-bottom: 50px;
+    font-size: 2.5rem;
+    font-family: monospace;
+    color: #ffffff;
+    margin-top: 10px;
   }
   .sobrenosotros-description {
-    font-size: 2.5vw;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #000000;
+    font-size: 2rem;
+    font-family: monospace;
+    color: #ffffff;
     margin-top: 30px;
-    margin-bottom: 80px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 20px;
   }
   .cajanosotros {
-    max-height: 100%;
+    height: 900px;
+  }
+  .fotonosotros{
+    width: 100%;
+    height: 300px;
   }
 }
 
-/* Pantallas de 1200px a 1368px*/
-@media screen and (min-width: 1200px) and (max-width: 1440px) {
+/* Pantallas de 1280 a 1440px*/
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
   .sobrenosotros-title {
     font-size: 2vw;
     font-family: monospace;
     color: #ffffff;
-    margin-top: 100px;
+    margin-top: 15%;
   }
   .sobrenosotros-description {
     font-size: 1.3vw;

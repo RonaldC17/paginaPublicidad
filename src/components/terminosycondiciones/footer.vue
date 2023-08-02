@@ -69,8 +69,8 @@
           align="center"
         >
           <h3>
-            © <strong>{{ new Date().getFullYear() }}</strong> Desarrollado por<router-link
-              to="/portafolio"
+            © <strong>{{ new Date().getFullYear() }}</strong> Desarrollado por <router-link
+              to="/terminosycondiciones"
               class="link px-sm-4"
               >Target Publicity</router-link>
           </h3>

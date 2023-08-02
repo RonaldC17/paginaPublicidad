@@ -1,105 +1,68 @@
 <template>
   <header>
-    <v-row class="contenedorbase" align="center" justify="center">
-      <v-col cols="6" sm="6" md="6" lg="6" xl="6" >
+    <v-navigation-drawer
+      v-model="drawer"
+      temporary
+      class="hidden-lg-and-up contenedorhamb"
+    >
+      <v-row no-gutters>
         <v-img
           src="../../assets/portfolio/Logos/TARGET-PUBLICITY-SF.png"
-          class="imagen"
+          class="logomenuhamb"
+        ></v-img>
+      </v-row>
+      <v-row no-gutters>
+        <v-list>
+          <v-list-item v-for="(item, index) in menuItems" :key="index">
+            <v-list-item-icon>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content class="contenidohamburguesa">
+              <router-link :to="item.route">{{ item.title }}</router-link>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </v-row>
+    </v-navigation-drawer>
+
+    <v-row class="menunormal hidden-md-and-down">
+      <v-col lg="2" xl="4" class="text-left fotomenu">
+        <v-img
+          src="../../assets/portfolio/Logos/TARGET-PUBLICITY-SF.png"
+          class="logo"
         ></v-img>
       </v-col>
-      <v-col cols="6" sm="6" md="6" lg="6" xl="6">
-        <nav class="navbar-expand-lg">
-          <v-row justify="end">
-            <div class="d-xl-none">
-              <v-app-bar-nav-icon
-                @click="toggleMenu"
-                class="icon"
-              ></v-app-bar-nav-icon>
-            </div>
-          </v-row>
-
-          <v-navigation-drawer
-            v-model="menuOpen"
-            class="d-xl-none d-lg-none menu-hamburguesa"
-          >
-            <v-list class="d-xl-none d-lg-none menu-hamburguesa-lista">
-              <v-col>
-                <v-list-item>
-                  <v-img
-                    src="../../assets/portfolio/Logos/TARGET-PUBLICITY-SF.png"
-                    class="menu-hamburguesa-logo"
-                  ></v-img>
-                </v-list-item>
-              </v-col>
-              <v-col>
-                <v-list-item
-                  v-for="nav in headerMenu"
-                  :key="nav.title"
-                  :class="{ active: nav.isActive }">
-                  <router-link :to="nav.href" class="nav-link">
-                    <b> {{ nav.title }} </b>
-                  </router-link>
-                </v-list-item>
-              </v-col>
-            </v-list>
-          </v-navigation-drawer>
-          <ul class="d-xl-flex menunormal">
-            <v-list-item
-              v-for="nav in headerMenu"
-              :key="nav.title"
-              :class="{ active: nav.isActive }"
-            >
-              <router-link :to="nav.href" class="nav-link"
-                ><b> {{ nav.title }} </b></router-link
-              >
-            </v-list-item>
-          </ul>
-        </nav>
+      <v-spacer></v-spacer>
+      <v-col lg="10" xl="8" class="text-right botonesmenu">
+        <router-link to="/inicio" class="ml-5 mr-5">INICIO</router-link>
+        <router-link to="/portafolio" class="ml-5 mr-5">PORTAFOLIO</router-link>
+        <router-link to="/contactos" class="ml-5 mr-5">CONTACTO</router-link>
+      </v-col>
+    </v-row>
+    <v-row class="d-xl-none" no-gutters>
+      <v-col>
+        <v-app-bar-nav-icon
+          @click.stop="drawer = !drawer"
+          class="hidden-xl-and-up iconohamburguesa"
+        ></v-app-bar-nav-icon>
       </v-col>
     </v-row>
   </header>
-  <section class="siguiente"></section>
+  <section scroll class="siguiente"></section>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      headerMenu: [
-        {
-          title: "Inicio",
-          href: "/inicio",
-          isActive: true,
-        },
-        {
-          title: "Portafolio",
-          href: "/portafolio",
-          isActive: false,
-        },
-        {
-          title: "Contacto",
-          href: "/contactos",
-          isActive: false,
-        },
+      drawer: false,
+      appTitle: "Awesome App",
+      menuItems: [
+        { title: "Inicio", icon: "mdi-home", route: "/inicio" },
+        { title: "Portafolio", icon: "mdi-folder", route: "/portafolio" },
+        { title: "Contacto", icon: "mdi-email", route: "/contactos" },
       ],
-      menuOpen: false,
     };
-  },
-  methods: {
-    toggleMenu() {
-      this.menuOpen = !this.menuOpen;
-    },
-    handleClickOutside(event) {
-      const menuElement = document.querySelector(".d-xl-none");
-      const targetElement = event.target;
-      if (!menuElement.contains(targetElement) && this.menuOpen) {
-        this.menuOpen = false;
-      }
-    },
-    redirectToWhatsApp() {
-    const whatsappURL = 'https://api.whatsapp.com/send?phone=TUNUMERODEWHATSAPP';
-    window.open(whatsappURL, '_blank');
-    },
   },
   mounted() {
     window.addEventListener("scroll", () => {
@@ -111,6 +74,10 @@ export default {
   beforeDestroy() {
     document.removeEventListener("click", this.handleClickOutside);
   },
+  redirectToWhatsApp() {
+    const whatsappURL = "https://api.whatsapp.com/send?phone=3238146440";
+    window.open(whatsappURL, "_blank");
+  },
 };
 </script>
 
@@ -118,6 +85,20 @@ export default {
 * {
   margin: 0;
   padding: 0;
+}
+.logo {
+  width: 100%;
+  height: 100px;
+}
+
+.menunormal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconohamburguesa {
+  float: right;
 }
 
 header {
@@ -128,53 +109,38 @@ header {
   display: flex;
   justify-content: space-around;
   transition: 0.7s;
-  padding: 30px 20px;
+  padding: 1px 10px;
   z-index: 20;
+  transition: 0.3s;
 }
 
-header.abajo ul li .nav-link {
-  color: black;
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-header ul {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-header ul li .nav-link {
-  position: relative;
-  margin: 0 15px;
-  text-decoration: none;
-  color: #000000;
-  letter-spacing: 2px;
-  font-weight: 600;
-  transition: 0.7s;
+header.abajo {
+  background: #eceff1;
+  padding: 5px 10px;
 }
 
 .siguiente {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background: url("../../assets/portfolio/Banners/portafolio.png");
+  background: url("../../assets/portfolio/Banners/inicio.png");
   background-size: cover;
   background-position: center;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  text-align: center;
 }
 
+.botonesmenu a {
+  font-family: "Lato Black", sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+}
 
+.botonesmenu a:hover {
+  color: #07a5c3;
+}
+
+.contenedorhamb {
+  background: #eceff1;
+}
 
 /* @media screen and (min-width: 0px) and (max-width: 320px) {
   .menu-container {
@@ -191,105 +157,130 @@ header ul li .nav-link {
 } */
 
 @media screen and (min-width: 321px) and (max-width: 480px) {
-  * {
-    margin: 0;
-    padding: 0;
+  .contenedorhamb {
+    background: #eceff1;
   }
 
-  header.abajo {
-    background: #b0bec5;
-    padding: 1px 10px;
+  .contenidohamburguesa a {
+    font-family: "Lato Black", sans-serif;
+    font-weight: bold;
+    text-decoration: none;
   }
 
-  header.abajo ul li .nav-link {
-    color: black;
-  }
-
-  nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .contenidohamburguesa a:hover {
+    color: #07a5c3;
   }
 
   .siguiente {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: url("../../assets/portfolio/Banners/portafolioTel.png");
+    background: url("../../assets/portfolio/Banners/inicio.png");
     background-size: cover;
     background-position: center;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    text-align: center;
   }
 
-  header .imagen {
-    position: relative;
-    width: 150px;
-    height: 90px;
+  .iconohamburguesa {
+    float: right;
+    font-size: 3vh;
   }
-
-  .menu-hamburguesa {
-    background-color: #ffffff;
-    font-size: 1.1rem;
-    font-family: monospace;
+  header.abajo {
+    background: #eceff1;
+    padding: 5px 10px;
   }
-
-  .menunormal {
-    display: none;
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    transition: 0.7s;
+    padding: 10px 10px;
+    z-index: 20;
+    transition: 0.5s;
   }
 }
 
 @media screen and (min-width: 481px) and (max-width: 599px) {
-  header.abajo {
-    background: #b0bec5;
-    padding: 1px 15px;
+  .contenedorhamb {
+    background: #eceff1;
+  }
+
+  .contenidohamburguesa a {
+    font-family: "Lato Black", sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .contenidohamburguesa a:hover {
+    color: #07a5c3;
   }
   .siguiente {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: url("../../assets/portfolio/Banners/portafolioTel.png");
+    background: url("../../assets/portfolio/Banners/inicio.png");
     background-size: cover;
     background-position: center;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    text-align: center;
   }
 
-  .menu-hamburguesa {
-    background-color: #ffffff;
-    font-size: 1.1rem;
-    font-family: monospace;
+  .iconohamburguesa {
+    float: right;
+    font-size: 3.2vh;
   }
 
-  header .imagen {
-    position: relative;
-    width: 125px;
-    height: 80px;
+  header.abajo {
+    background: #eceff1;
+    padding: 5px 10px;
   }
-
-  .menunormal {
-    display: none;
-  }
-
-  .menu-hamburguesa-lista{
-    max-width: 200px;
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    transition: 0.7s;
+    padding: 5px 10px;
+    z-index: 20;
+    transition: 0.5s;
   }
 }
 
 @media screen and (min-width: 600px) and (max-width: 768px) {
-  * {
-    margin: 0;
-    padding: 0;
+  .contenedorhamb {
+    background: #eceff1;
   }
 
+  .contenidohamburguesa a {
+    font-family: "Lato Black", sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  .contenidohamburguesa a:hover {
+    color: #07a5c3;
+  }
+
+  .siguiente {
+    background: url("../../assets/portfolio/Banners/inicio.png");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .iconohamburguesa {
+    float: right;
+    font-size: 3vh;
+  }
+
+  header.abajo {
+    background: #eceff1;
+    padding: 5px 10px;
+  }
   header {
     position: fixed;
     top: 0;
@@ -298,56 +289,44 @@ header ul li .nav-link {
     display: flex;
     justify-content: space-around;
     transition: 0.7s;
-    padding: 30px 20px;
+    padding: 15px 10px;
     z-index: 20;
-  }
-
-  header.abajo {
-    background: #b0bec5;
-    padding: 15px 20px;
-  }
-
-  header.abajo ul li .nav-link {
-    color: black;
-  }
-
-  nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .siguiente {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: url("../../assets/portfolio/Banners/portafolioTel.png");
-    background-size: cover;
-    background-position: center center;
-  }
-
-  .menu-hamburguesa {
-    background-color: #ffffff;
-    font-size: 1.1rem;
-    font-family: monospace;
-  }
-
-  header .imagen {
-    position: relative;
-    width: 150px;
-    height: 100px;
-  }
-  .menunormal {
-    display: none;
+    transition: 0.5s;
   }
 }
-
 @media screen and (min-width: 769px) and (max-width: 960px) {
-  * {
-    margin: 0;
-    padding: 0;
+  .contenedorhamb {
+    background: #eceff1;
   }
 
+  .contenidohamburguesa a {
+    font-family: "Lato Black", sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+
+  .contenidohamburguesa a:hover {
+    color: #07a5c3;
+  }
+
+  .siguiente {
+    background: url("../../assets/portfolio/Banners/inicio.png");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .iconohamburguesa {
+    float: right;
+    font-size: 3vh;
+  }
+  header.abajo {
+    background: #eceff1;
+    padding: 25px 10px;
+  }
   header {
     position: fixed;
     top: 0;
@@ -356,60 +335,43 @@ header ul li .nav-link {
     display: flex;
     justify-content: space-around;
     transition: 0.7s;
-    padding: 30px 20px;
+    padding: 25px 10px;
     z-index: 20;
-  }
-
-  header.abajo {
-    background: #b0bec5;
-    padding: 15px 20px;
-  }
-
-  header.abajo ul li .nav-link {
-    color: black;
-  }
-
-  nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .siguiente {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: url("../../assets/portfolio/Banners/portafolioTel.png");
-    background-size: cover;
-    background-position: center center;
-  }
-
-  .menu-hamburguesa {
-    background-color: #ffffff;
-    font-size: 2rem;
-    font-family: monospace;
-    max-width: 500px;
-  }
-
-  .icon{
-    font-size: 3vh;
-    margin-right: 15px;
-  }
-
-  header .imagen {
-    position: relative;
-    width: 200px;
-    height: 150px;
-  }
-
-  .menunormal {
-    display: none;
+    transition: 0.5s;
   }
 }
 @media screen and (min-width: 961px) and (max-width: 1024px) {
-  * {
-    margin: 0;
-    padding: 0;
+  .contenedorhamb {
+    background: #eceff1;
+  }
+
+  .contenidohamburguesa a {
+    font-family: "Lato Black", sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .contenidohamburguesa a:hover {
+    color: #07a5c3;
+  }
+
+  .siguiente {
+    background: url("../../assets/portfolio/Banners/inicio.png");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .iconohamburguesa {
+    float: right;
+    font-size: 3vh;
+  }
+
+  header.abajo {
+    background: #eceff1;
+    padding: 50px 10px;
   }
 
   header {
@@ -420,79 +382,44 @@ header ul li .nav-link {
     display: flex;
     justify-content: space-around;
     transition: 0.7s;
-    padding: 30px 20px;
+    padding: 50px 10px;
     z-index: 20;
-  }
-
-  header.abajo {
-    background: #b0bec5;
-    padding: 15px 20px;
-  }
-
-  header.abajo ul li .nav-link {
-    color: black;
-  }
-
-  nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  header ul {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  header ul li .nav-link {
-    position: relative;
-    margin: 0 15px;
-    text-decoration: none;
-    color: #fff;
-    letter-spacing: 2px;
-    font-weight: 600;
-    transition: 0.7s;
-  }
-
-  .siguiente {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: url("../../assets/portfolio/Banners/portafolioMed.png");
-    background-size: cover;
-    background-position: center center;
-  }
-
-  .menu-hamburguesa {
-    background-color: #ffffff;
-    font-size: 1.1rem;
-    font-family: monospace;
-  }
-
-  .icon{
-    font-size: 3vh;
-    margin-left: 15px;
-  }
-
-  header .imagen {
-    position: relative;
-    width: 200px;
-    height: 150px;
-  }
-
-  .menunormal {
-    display: none;
+    transition: 0.5s;
   }
 }
-
 @media screen and (min-width: 1025px) and (max-width: 1199px) {
-  * {
-    margin: 0;
-    padding: 0;
+  .contenedorhamb {
+    background: #eceff1;
   }
 
+  .contenidohamburguesa a {
+    font-family: "Lato Black", sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .contenidohamburguesa a:hover {
+    color: #07a5c3;
+  }
+
+  .siguiente {
+    background: url("../../assets/portfolio/Banners/inicio.png");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .iconohamburguesa {
+    float: right;
+    font-size: 3.5vh;
+  }
+
+  header.abajo {
+    background: #eceff1;
+    padding: 50px 30px;
+  }
   header {
     position: fixed;
     top: 0;
@@ -501,82 +428,25 @@ header ul li .nav-link {
     display: flex;
     justify-content: space-around;
     transition: 0.7s;
-    padding: 30px 20px;
+    padding: 50px 10px;
     z-index: 20;
-  }
-
-  header.abajo {
-    background: #b0bec5;
-    padding: 15px 20px;
-  }
-
-  header.abajo ul li .nav-link {
-    color: black;
-  }
-
-  header .imagen {
-    position: relative;
-    width: 300px;
-    height: 300px;
-  }
-
-  nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  header ul {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  header ul li .nav-link {
-    position: relative;
-    margin: 0 15px;
-    text-decoration: none;
-    color: #fff;
-    letter-spacing: 2px;
-    font-weight: 600;
-    transition: 0.7s;
-  }
-
-  .siguiente {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: url("../../assets/portfolio/Banners/portafolioMed.png");
-    background-size: cover;
-    background-position: center center;
-  }
-
-  .menu-hamburguesa {
-    background-color: #ffffff;
-    font-size: 1.1rem;
-    font-family: monospace;
-  }
-
-  .icon{
-    font-size: 3vh;
-    margin-left: 15px;
-  }
-
-  header .imagen {
-    position: relative;
-    width: 200px;
-    height: 150px;
-  }
-
-  .menunormal {
-    display: none;
+    transition: 0.5s;
   }
 }
 @media screen and (min-width: 1200px) and (max-width: 1440px) {
-  * {
-    margin: 0;
-    padding: 0;
+  .logo {
+    width: 100%;
+    height: 100px;
+  }
+
+  .menunormal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .iconohamburguesa {
+    float: right;
   }
 
   header {
@@ -587,62 +457,39 @@ header ul li .nav-link {
     display: flex;
     justify-content: space-around;
     transition: 0.7s;
-    padding: 30px 20px;
+    padding: 10px 10px;
     z-index: 20;
+    transition: 0.5s;
   }
 
   header.abajo {
-    background: #a6a6a6;
-    padding: 1px 5px;
-  }
-
-  header.abajo ul li .nav-link {
-    color: black;
-  }
-  header .imagen {
-    position: relative;
-    width: 150px;
-    height: 100px;
-  }
-
-  nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  header ul {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: #eceff1;
+    padding: 10px 30px;
   }
 
   .siguiente {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: url("../../assets/portfolio/Banners/portafolio.png");
+    background: url("../../assets/portfolio/Banners/inicio.png");
     background-size: cover;
-    background-position: center center;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 
-  .menu-hamburguesa {
+  .botonesmenu a {
+    font-family: "Lato Black", sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .botonesmenu a:hover {
+    color: #07a5c3;
+  }
+
+  .contenedorhamb {
     display: none;
   }
-
-  .menunormal {
-    font-size: 20px;
-    margin-right: 10px;
-    display: flex;
-  }
-
-  .imagen {
-    width: 200px;
-    height: 200px;
-  }
 }
-
 @media screen and (min-width: 1441px) and (max-width: 2560px) {
   * {
     margin: 0;
@@ -710,7 +557,7 @@ header ul li .nav-link {
     transform: translateX(-10vh);
   }
 
-  .menu-hamburguesa{
+  .menu-hamburguesa {
     display: none;
   }
 }

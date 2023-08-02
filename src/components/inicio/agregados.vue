@@ -1,6 +1,6 @@
 <template>
   <v-parallax
-    src="../../assets/portfolio/img/Img15.jpg"
+    src="../../assets/portfolio/img/Img2.jpg"
     class="cajaagregados text-center"
   >
     <div class="feature1-component mini-spacer">
@@ -242,7 +242,7 @@ export default {
   }
 }
 
-@media screen and (min-width: 769px) and (max-width: 960px) {
+@media screen and (min-width: 769px) and (max-width: 959px) {
   .cajaagregados {
     max-height: 100%;
   }
@@ -286,20 +286,20 @@ export default {
   }
 }
 
-@media screen and (min-width: 961px) and (max-width: 1024px) {
+@media screen and (min-width: 960px) and (max-width: 1023px) {
   .cajaagregados {
-    max-height: 100%;
+    height: auto;
   }
 
   .tituloagregados {
     font-size: 30px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: monospace;
     color: #ffffff;
   }
 
   .titulocard {
     font-size: 17px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: monospace;
     color: #07a5c3;
   }
 
@@ -321,7 +321,7 @@ export default {
 
   .descripcioncard {
     font-size: 14px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: monospace;
   }
 
   .imagen-img {
@@ -330,20 +330,21 @@ export default {
   }
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1199px) {
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
   .cajaagregados {
-    max-height: 100%;
+    height: auto;
   }
 
   .tituloagregados {
     font-size: 30px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: monospace;
     color: #ffffff;
+    margin-bottom: 20px;
   }
 
   .titulocard {
     font-size: 17px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: monospace;
     color: #07a5c3;
   }
 
@@ -365,7 +366,7 @@ export default {
 
   .descripcioncard {
     font-size: 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: monospace;
   }
 
   .imagen-img {
@@ -376,18 +377,19 @@ export default {
 
 @media screen and (min-width: 1200px) and (max-width: 1440px) {
   .cajaagregados {
-    max-height: 1050px;
+    height: auto;
   }
 
   .tituloagregados {
     font-size: 30px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: monospace;
     color: #ffffff;
+    margin-bottom: 50px;
   }
 
   .titulocard {
     font-size: 25px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: monospace;
     color: #07a5c3;
   }
 
@@ -410,7 +412,7 @@ export default {
   .descripcioncard {
     margin-top: 10px;
     font-size: 15px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: monospace;
   }
 
   .imagen-img {

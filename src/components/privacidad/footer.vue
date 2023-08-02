@@ -70,7 +70,7 @@
         >
           <h3>
             © <strong>{{ new Date().getFullYear() }}</strong> Desarrollado por<router-link
-              to="/portafolio"
+              to="/politicadeprivacidad"
               class="link px-sm-4"
               >Target Publicity</router-link>
           </h3>

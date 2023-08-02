@@ -1,12 +1,9 @@
 <template>
-  <v-parallax
-    src="../../assets/portfolio/images2/services-bg-3000.jpg"
-    class="testimonial-component"
-  >
+  <div class="testimonial-component">
     <v-row no-gutters>
       <v-container>
         <v-row class="mt-5" justify="center">
-          <v-col cols="12" md="12" lg="6" class="">
+          <v-col cols="12" md="12" lg="6" class="mt-lg-16">
             <div class="text-lg-left text-xs-center">
               <h4 class="section-title">
                 <b> Testimonios </b>
@@ -71,7 +68,7 @@
         </v-row>
       </v-container>
     </v-row>
-  </v-parallax>
+  </div>
 </template>
 
 <script>
@@ -109,6 +106,12 @@ export default {
 
 <style scoped>
 
+.testimonial-component{
+  background-image: url("../../assets/portfolio/images2/services-bg-3000.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .section-title {
   font-size: 15px;
   font-family: monospace;
@@ -142,6 +145,7 @@ export default {
 @media screen and (min-width: 321px) and (max-width: 480px) {
   .testimonial-component {
     max-height: 500px;
+    overflow: hidden;
   }
 
   .section-title {
@@ -184,15 +188,15 @@ export default {
   .carrusel{
     box-shadow: 0px 15px 15px rgba(2, 2, 2, 0.1);
     border-radius: 15px; 
-    max-height: auto;
+    max-height: 240px;
   }
 }
 
 @media screen and (min-width: 481px) and (max-width: 599px) {
   .testimonial-component {
     max-height: 500px;
+    overflow: hidden;
   }
-
   .section-title {
     font-size: 15px;
     font-family: monospace;
@@ -226,15 +230,17 @@ export default {
     object-fit: cover;
     margin-bottom: 10px;
   }
-  .card-shadow {
-    box-shadow: 0px 2px 150px rgba(2, 2, 2, 0.1);
-    max-height: 100%;
+  .carrusel{
+    box-shadow: 0px 15px 15px rgba(2, 2, 2, 0.1);
+    border-radius: 15px; 
+    max-height: 240px;
   }
 }
 
 @media screen and (min-width: 600px) and (max-width: 768px) {
   .testimonial-component {
-    height: 500px;
+    height: 450px;
+    overflow: hidden;
   }
 
   .section-title {
@@ -274,12 +280,12 @@ export default {
   .carrusel{
     box-shadow: 0px 15px 15px rgba(2, 2, 2, 0.1);
     border-radius: 15px; 
-    height: auto;
   }
 }
 @media screen and (min-width: 769px) and (max-width: 959px) {
   .testimonial-component {
     max-height: 450px;
+    overflow: hidden;
   }
 
   .section-title {
@@ -315,15 +321,16 @@ export default {
     object-fit: cover;
     margin-bottom: 10px;
   }
-  .card-shadow {
-    box-shadow: 0px 2px 15px rgba(2, 2, 2, 0.1);
-    max-height: 100%;
+  .carrusel{
+    box-shadow: 0px 15px 15px rgba(2, 2, 2, 0.1);
+    border-radius: 25px; 
   }
 }
 
-@media screen and (min-width: 960px) and (max-width: 1022px) {
+@media screen and (min-width: 960px) and (max-width: 1023px) {
   .testimonial-component {
     max-height: 450px;
+    overflow: hidden;
   }
 
   .section-title {
@@ -335,6 +342,7 @@ export default {
     font-size: 30px;
     font-family: monospace;
     color: #ffff;
+    margin-top: 50px;
   }
   .testimonios {
     font-size: 15px;
@@ -359,15 +367,16 @@ export default {
     object-fit: cover;
     margin-bottom: 10px;
   }
-  .card-shadow {
-    box-shadow: 0px 2px 15px rgba(2, 2, 2, 0.1);
-    max-height: 100%;
+  .carrusel{
+    box-shadow: 0px 15px 15px rgba(2, 2, 2, 0.1);
+    border-radius: 15px; 
   }
 }
 
-@media screen and (min-width: 1023px) and (max-width: 1199px) {
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
   .testimonial-component {
     max-height: 450px;
+    overflow: hidden;
   }
 
   .section-title {
@@ -410,7 +419,8 @@ export default {
 }
 @media screen and (min-width: 1200px) and (max-width: 1440px) {
   .testimonial-component {
-    height: 400px;
+    height: 450px;
+    overflow: hidden;
   }
 
   .section-title {
@@ -449,7 +459,7 @@ export default {
   .carrusel{
     box-shadow: 0px 15px 15px rgba(2, 2, 2, 0.1);
     border-radius: 15px; 
-    max-height: auto;
+    max-height: 300px;
   }
 }
 </style>

@@ -52,6 +52,10 @@
                 <sup class="text-muted">$</sup>
                 <span class="precio">{{ card.price }}</span>
               </div>
+              <div class="mt-1">
+                <span class="plan">{{ card.plan }}</span>
+              </div>
+              <br>
               <hr
                 class="mx-xs-auto ml-lg-15 mr-lg-15 ml-xs-1 mr-xs-1 divisor"
               />
@@ -59,6 +63,10 @@
               <p class="mt-5 descripcionmd">{{ card.desc1 }}</p>
               <p class="mt-5 descripcionmd">{{ card.desc2 }}</p>
               <p class="mt-5 descripcionmd">{{ card.desc3 }}</p>
+              <p class="mt-5 descripciondw">{{ card.desc4 }}</p>
+              <p class="mt-5 descripciondw">{{ card.desc5 }}</p>
+              <p class="mt-5 descripciondw">{{ card.desc6 }}</p>
+              <p class="mt-5 descripciondw">{{ card.desc7 }}</p>
             </div>
             <hr class="ml-lg-15 mr-lg-15 divisor" />
             <div class="text-center mt-lg-10">
@@ -106,7 +114,7 @@
               </h3>
               <div class="mt-5">
                 <sup class="text-muted">$</sup>
-                <span class="precio">{{ card.price }}</span>
+                <p class="precio">{{ card.price }}</p>
               </div>
               <hr class="ml-lg-15 mr-lg-15 divisor" />
               <p class="mt-5 descripciondw">{{ card.desc }}</p>
@@ -136,39 +144,39 @@ export default {
           img: "cm.png",
           title: "Comunity Manager",
           price: "500.000",
-          plan: "Mensual",
-          desc: "Potencia tu negocio con la gestión de Google Ads.",
-          desc1:
-            "Crea anuncios efectivos en Google Ads para destacar tu negocio.",
-          desc2:
-            "Aprovecha la publicidad de pago en Google Ads para llegar a tu audiencia objetivo.",
-          desc3:
-            "Realizamos un seguimiento exhaustivo de tu empresa en Google Ads para garantizar resultados óptimos.",
+          desc: "Comunicación activa con la comunidad.",
+          desc1: "Gestión de Redes Sociales",
+          desc2: "Edición de videos (2).",
+          desc3: "Diseño de post publicitarios (15) para Instagram y facebook.",
+          desc4: "Diseño formato Historias (5).",
+          desc5: "Manejo de hashtag.",
         },
         {
           img: "google.png",
           title: "Google ADS",
           price: "500.000",
-          plan: "Mensual",
-          desc: "Potencia tu negocio con la gestión de Google Ads.",
+          plan: "Inversión pauta semanal desde: $ 200.000",
+          desc: "Investigación de la buyer persona.",
           desc1:
-            "Crea anuncios efectivos en Google Ads para destacar tu negocio.",
-          desc2:
-            "Aprovecha la publicidad de pago en Google Ads para llegar a tu audiencia objetivo.",
+            "Analisis y selección de palabras clave para campaña de busqueda.",
+          desc2: "Campaña de Red de búsqueda.",
           desc3:
-            "Realizamos un seguimiento exhaustivo de tu empresa en Google Ads para garantizar resultados óptimos.",
+            "Integración Google Tag Manager para seguimiento de conversiones y visitas.",
+          desc4: "Integración de google Analytics.",
         },
         {
           img: "media.png",
           title: "Social Media ADS",
-          price: "800.000",
-          plan: "Mensual",
-          desc: "Gestión profesional de tus redes sociales.",
-          desc1: "Creación de anuncios en las redes sociales mediante ADS.",
-          desc2:
-            "Potencia tu alcance con publicidad pagada en las redes sociales mediante ADS.",
-          desc3:
-            "Realizamos un seguimiento detallado en las redes sociales mediante ADS para maximizar los resultados.",
+          price: "500.000",
+          plan: "Inversión pauta semanal desde: $ 120.000",
+          desc: "Objetivo de campaña según en el requerimiento de la empresa.",
+          desc1: "Escalamiento de campañas.",
+          desc2: "Diseño de post publicitarios.",
+          desc3: "Campaña en Instagram, Facebook.",
+          desc4: "Campaña de retargeting.",
+          desc5: "Integración pixel de facebook.",
+          desc6: "Creación de cuentas como perfiles comerciales.",
+          desc7: "Informes de rendimiento.",
         },
       ],
       pricePlan1: [
@@ -227,6 +235,8 @@ export default {
 </script>
 
 <style scoped>
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,900&display=swap");
 .containerplanes {
   background: #dfe3e4;
   background-size: cover;
@@ -258,8 +268,8 @@ export default {
 }
 
 .precio {
-  font-size: 35px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Lato Black", sans-serif;
+  font-weight: bold;
 }
 
 .boton p {
@@ -297,7 +307,7 @@ export default {
   }
 
   .pricing-card {
-    background: #d9d9d9;
+    background: #ffffff;
     border-radius: 15px;
     box-shadow: 0 20px 55px rgba(0, 0, 0, 0.1);
     transition: all 0.8s ease;
@@ -318,14 +328,14 @@ export default {
 
   .descripciondw {
     font-size: 13px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
   }
 
   .descripcionmd {
-    font-size: 12px;
-    margin-left: 10px;
-    margin-right: 10px;
+    font-size: 13px;
+    margin-left: 50px;
+    margin-right: 50px;
   }
 
   #title h3 {
@@ -369,7 +379,7 @@ export default {
   }
 
   .pricing-card {
-    background: #d9d9d9;
+    background: #ffffff;
     border-radius: 15px;
     box-shadow: 0 20px 55px rgba(0, 0, 0, 0.1);
     transition: all 0.8s ease;
@@ -390,14 +400,14 @@ export default {
 
   .descripciondw {
     font-size: 15px;
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-left: 50px;
+    margin-right: 50px;
   }
 
   .descripcionmd {
     font-size: 15px;
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-left: 50px;
+    margin-right: 50px;
   }
 
   #title h3 {
@@ -441,7 +451,7 @@ export default {
   }
 
   .pricing-card {
-    background: #d9d9d9;
+    background: #ffffff;
     border-radius: 15px;
     box-shadow: 0 20px 55px rgba(0, 0, 0, 0.1);
     transition: all 0.8s ease;
@@ -461,14 +471,15 @@ export default {
   }
 
   .descripciondw {
-    font-size: 15px;
-    margin-left: 20px;
-    margin-right: 20px;
+    font-size: 13px;
+    margin-left: 40px;
+    margin-right: 40px;
   }
+
   .descripcionmd {
-    font-size: 15px;
-    margin-left: 20px;
-    margin-right: 20px;
+    font-size: 13px;
+    margin-left: 40px;
+    margin-right: 40px;
   }
 
   #title h3 {
@@ -498,7 +509,7 @@ export default {
     height: 60px;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 960px) {
+@media screen and (min-width: 768px) and (max-width: 959px) {
   .titulos {
     font-size: 12px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -512,7 +523,7 @@ export default {
   }
 
   .pricing-card {
-    background: #d9d9d9;
+    background: #ffffff;
     border-radius: 15px;
     box-shadow: 0 20px 55px rgba(0, 0, 0, 0.1);
     transition: all 0.8s ease;
@@ -533,14 +544,14 @@ export default {
 
   .descripciondw {
     font-size: 17px;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
   }
 
   .descripcionmd {
     font-size: 17px;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
   }
 
   #title h3 {
@@ -570,8 +581,7 @@ export default {
     height: 60px;
   }
 }
-
-@media screen and (min-width: 961px) and (max-width: 1023px) {
+@media screen and (min-width: 960px) and (max-width: 1023px) {
   .titulos {
     font-size: 0.9em;
     font-family: monospace;
@@ -586,7 +596,7 @@ export default {
   }
 
   .pricing-card {
-    background: #d9d9d9;
+    background: #ffffff;
     border-radius: 15px;
     box-shadow: 0 20px 55px rgba(0, 0, 0, 0.1);
     transition: all 0.8s ease;
@@ -607,14 +617,14 @@ export default {
 
   .descripciondw {
     font-size: 20px;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: 10%;
+    margin-right: 10%;
   }
 
   .descripcionmd {
     font-size: 20px;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: 10%;
+    margin-right: 10%;
   }
 
   .boton p {
@@ -644,7 +654,6 @@ export default {
     font-size: 1.5em;
   }
 }
-
 @media screen and (min-width: 1024px) and (max-width: 1199px) {
   .titulos {
     font-size: 10px;
@@ -653,17 +662,17 @@ export default {
 
   .divisor {
     background-color: #2c015a;
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: 50px;
+    margin-right: 50px;
     margin-top: 10px;
   }
 
   .pricing-card {
-    background: #d9d9d9;
+    background: #ffffff;
     border-radius: 15px;
     box-shadow: 0 20px 55px rgba(0, 0, 0, 0.1);
     transition: all 0.8s ease;
-    height: 700px;
+    height: auto;
     margin-top: 25px;
   }
 
@@ -679,15 +688,15 @@ export default {
   }
 
   .descripciondw {
-    font-size: 17px;
-    margin-left: 20px;
-    margin-right: 20px;
+    font-size: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
   }
 
   .descripcionmd {
-    font-size: 17px;
-    margin-left: 20px;
-    margin-right: 20px;
+    font-size: 20px;
+    margin-left: 15%;
+    margin-right: 15%;
   }
 
   #title h3 {
@@ -716,7 +725,6 @@ export default {
     height: 60px;
   }
 }
-
 @media screen and (min-width: 1200px) and (max-width: 1440px) {
   .titulos {
     font-size: 10px;
@@ -725,9 +733,8 @@ export default {
 
   .divisor {
     background-color: #2c015a;
-    margin-left: 200px;
-    margin-right: 200px;
-    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
   }
 
   .pricing-card {
@@ -735,7 +742,7 @@ export default {
     border-radius: 15px;
     box-shadow: 0 20px 55px rgba(0, 0, 0, 0.1);
     transition: all 0.8s ease;
-    height: 800px;
+    height: auto;
   }
 
   .pricing-card:hover {
@@ -745,20 +752,21 @@ export default {
   }
 
   .precio {
-    font-size: 35px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "Lato Black", sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
   }
 
   .descripciondw {
-    font-size: 17px;
-    margin-left: 20px;
-    margin-right: 20px;
+    font-size: 1.2rem;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 
   .descripcionmd {
-    font-size: 17px;
-    margin-left: 20px;
-    margin-right: 20px;
+    font-size: 1.2rem;
+    margin-left: 10%;
+    margin-right: 10%;
   }
 
   #title h3 {
@@ -774,6 +782,7 @@ export default {
     border-radius: 50px;
     background-color: #2c015a;
     transition: all 0.8s ease;
+    margin-top: 40px;
   }
 
   .boton:hover {
@@ -784,6 +793,10 @@ export default {
   .img-planes {
     width: 60px;
     height: 60px;
+  }
+
+  .tituloplanes {
+    margin-bottom: 50px;
   }
 }
 </style>

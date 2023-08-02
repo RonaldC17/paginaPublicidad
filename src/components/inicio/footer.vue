@@ -8,7 +8,8 @@
           lg="4"
           class="px-xs-0"
           justify="center"
-          align="center">
+          align="center"
+        >
           <v-img
             src="../../assets/portfolio/Logos/TARGET-PUBLICITY-SF.png"
             class="imagenfooter mt-lg-n10"
@@ -17,16 +18,16 @@
         <v-col
           class="px-xs-0 terminosypolitica"
           cols="12"
-          md="6"
+          md="4"
           lg="4"
           xl="6"
           justify="center"
           align="center">
-          <h2 class="lostitulos"> <b>  Avisos Legales </b></h2>
-          <div class="mt-lg-5">
-            <a href="/" class="link px-sm-4 ps-0">Términos y Condiciones</a>
-            <br>         
-            <a href="/" class="link px-sm-4 px-2 ">Política de Privacidad</a>
+          <h2 class="lostitulos"><b> Avisos Legales </b></h2>
+          <div class="mt-lg-5 mt-md-3">
+            <router-link to="/terminosycondiciones" class="link px-sm-4 ps-0"> Términos y Condiciones </router-link>
+            <br />
+            <router-link to="/politicadeprivacidad" class="link px-sm-4 ps-0"> Política de Privacidad </router-link>
           </div>
         </v-col>
         <v-col
@@ -35,9 +36,10 @@
           lg="4"
           class="px-xs-0"
           justify="center"
-          align="center">
-          <h2 class="lostitulos"> <b>  Nuestras Redes Sociales </b></h2>
-          <div class="social-icons mt-lg-5">
+          align="center"
+        >
+          <h2 class="lostitulos"><b>Redes Sociales</b></h2>
+          <div class="social-icons mt-lg-5 mt-md-3">
             <ul>
               <a href="#">
                 <i class="mdi mdi-facebook m-3"></i>
@@ -60,13 +62,18 @@
         <v-col
           class="ml-auto"
           cols="12"
-          md="6"
+          md="12"
           lg="12"
           xl="12"
           justify="center"
-          align="center">
-          <h3> © <strong >{{ new Date().getFullYear() }}</strong> Desarrollado por<a href="/" class="link px-sm-4 ">Target Publicity</a></h3>
-          
+          align="center"
+        >
+          <h3>
+            © <strong>{{ new Date().getFullYear() }}</strong> Desarrollado por<router-link
+              to="/inicio"
+              class="link px-sm-4"
+              >Target Publicity</router-link>
+          </h3>
         </v-col>
       </v-row>
     </v-container>
@@ -91,9 +98,8 @@ export default {
 </script>
 
 <style scoped>
-
 .footer {
-  background-color: #ffffff;
+  background-color: #a6a6a6;
 }
 
 .imagenfooter {
@@ -108,35 +114,31 @@ export default {
 }
 
 .social-icons a {
-  color: #888888;
+  color: #000000;
   transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-  color: #000000;
+  color: #ffff;
 }
 
 .footer-bottom-bar {
   padding: 10px;
-  font-size: 20px;
+  font-size: 2vh;
 }
 
 .link {
-  color: #888888;
+  color: #000;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .link:hover {
-  color: #000000;
+  color: #ffff;
 }
 
-.lostitulos{
+.lostitulos {
   font-size: 25px;
 }
-
-/* .terminosypolitica{
-  margin-top: 25px;
-} */
 
 </style>

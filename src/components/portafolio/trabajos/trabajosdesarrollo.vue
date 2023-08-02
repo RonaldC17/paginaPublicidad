@@ -11,18 +11,16 @@
             </div>
           </v-col>
         </v-row>
-        <v-row class="" no-gutters>
+        <v-row no-gutters>
           <v-col
             cols="12"
             md="4"
             sm="6"
             class="mb-4 px-4 mt-5"
             v-for="card in portfolio"
-            :key="card.title"
-          >
+            :key="card.title">
             <v-card
-              class="portfolio-card overflow-hidden card-shadow fill-height"
-            >
+              class="portfolio-card overflow-hidden card-shadow fill-height">
               <h5 class="font-weight-medium font-18">{{ card.publicity }}</h5>
               <div class="portfolio-img">
                 <v-img
@@ -47,6 +45,19 @@
             </v-card>
           </v-col>
         </v-row>
+        <!-- <v-row justify="center" no-gutters>
+          <v-col cols="12" md="12" lg="12" xl="12">
+            <div class="text-center">
+              <v-btn
+                href="../../../components/portafolio/portafoliogeneral/todoslostrabajos.vue"
+                variant="outlined"
+                color="black"
+                id="botoninformacion">
+                Ver Proyectos
+              </v-btn>
+            </div>
+          </v-col>
+        </v-row> -->
       </v-container>
     </div>
   </div>

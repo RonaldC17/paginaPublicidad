@@ -76,7 +76,7 @@ export default {
       servicios: [
         {
           titulo: "Marketing Digital",
-          img: "publicidad.png",
+          img: "marketing.png",
           texto:
             "Si deseas que tu negocio comience a generar ventas, podemos ayudarte utilizando las herramientas de publicidad en redes sociales, que te permiten crear anuncios efectivos para promocionar tu empresa.",
         },
@@ -84,7 +84,7 @@ export default {
       servicios1: [
         {
           titulo: "Desarrollo Web",
-          img: "tecnología.png",
+          img: "desarrollo.png",
           texto:
             "Es esencial que tu empresa cuente con un sitio web profesional, ya sea una página web, una landing page o una tienda en línea. Esto te permitirá mostrar tus productos, servicios y atraer clientes potenciales de manera efectiva.",
         },

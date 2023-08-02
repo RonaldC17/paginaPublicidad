@@ -1,6 +1,6 @@
 <template>
-  <v-parallax
-    src="../../assets/portfolio/Banners/fondoblanco.jpg"
+  <div
+    src="../../assets/portfolio/variadas/fondoblanco1.jpg"
     class="team-component mini-spacer text-center"
   >
     <div>
@@ -73,7 +73,7 @@
         </v-row>
       </v-container>
     </div>
-  </v-parallax>
+  </div>
 </template>
 
 <script>
@@ -188,6 +188,8 @@ ul {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #000000;
   max-height: 700px;
+  background-image: url("../../assets/portfolio/variadas/fondoblanco1.jpg");
+  background-size: cover;
 }
 
 .icon-items {
@@ -272,7 +274,6 @@ ul {
 }
 
 @media screen and (min-width: 481px) and (max-width: 599px) {
-
   .custom-style {
     font-size: 20px;
     color: #333;
@@ -314,7 +315,6 @@ ul {
 }
 
 @media screen and (min-width: 600px) and (max-width: 768px) {
-
   .custom-style {
     font-size: 20px;
     color: #333;
@@ -336,7 +336,6 @@ ul {
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     max-width: 250px;
-    
   }
 
   .team-component {
@@ -356,7 +355,6 @@ ul {
 }
 
 @media screen and (min-width: 769px) and (max-width: 959px) {
-
   .custom-style {
     font-size: 25px;
     color: #333;
@@ -379,7 +377,6 @@ ul {
     transition: transform 0.3s ease;
     max-width: 300px;
     max-height: 100%;
-    
   }
 
   .team-component {
@@ -422,7 +419,6 @@ ul {
     transition: transform 0.3s ease;
     max-width: 300px;
     max-height: 100%;
-    
   }
 
   .team-component {
@@ -442,7 +438,6 @@ ul {
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1199px) {
-
   .custom-style {
     font-size: 25px;
     color: #333;
@@ -465,7 +460,6 @@ ul {
     transition: transform 0.3s ease;
     max-width: 300px;
     max-height: 100%;
-    
   }
 
   .team-component {
@@ -512,7 +506,6 @@ ul {
     transition: transform 0.3s ease;
     max-width: 300px;
     max-height: 100%;
-    
   }
 
   .team-component {
@@ -525,10 +518,8 @@ ul {
     font-size: 4vh;
   }
 
-  .team-title{
+  .team-title {
     font-size: 25px;
   }
-
-  
 }
 </style>
