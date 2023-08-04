@@ -22,8 +22,6 @@ import MyFooter from "./footer.vue";
 import MyMenu from "./menu.vue";
 import Formcontacto from "./formcontacto.vue";
 import Servicios from "./servicios.vue";
-import C2a from "./C2A/c2a.vue";
-import C2a1 from "./C2A/c2a1.vue";
 import Planes from "./planes/planes.vue";
 import c2a2 from "./C2A/c2a2.vue";
 import Agregados from "./agregados.vue";
@@ -39,8 +37,6 @@ export default {
     Formcontacto,
     Trabajadores,
     Servicios,
-    C2a,
-    C2a1,
     Planes,
     c2a2,
     Agregados,

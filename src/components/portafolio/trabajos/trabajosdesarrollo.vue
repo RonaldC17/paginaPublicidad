@@ -45,19 +45,9 @@
             </v-card>
           </v-col>
         </v-row>
-        <!-- <v-row justify="center" no-gutters>
-          <v-col cols="12" md="12" lg="12" xl="12">
-            <div class="text-center">
-              <v-btn
-                href="../../../components/portafolio/portafoliogeneral/todoslostrabajos.vue"
-                variant="outlined"
-                color="black"
-                id="botoninformacion">
-                Ver Proyectos
-              </v-btn>
-            </div>
-          </v-col>
-        </v-row> -->
+        <v-row justify="center" align="center">
+           <router-link to="/desarrolloweb" class="link px-sm-4 ps-0"> Más Proyectos </router-link>
+        </v-row>
       </v-container>
     </div>
   </div>

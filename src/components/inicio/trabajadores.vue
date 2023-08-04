@@ -8,12 +8,6 @@
         <v-row justify="center" no-gutters>
           <v-col cols="12" sm="10" md="9" lg="7">
             <div class="text-center mt-10">
-              <!-- <h2 class="section-title">
-                <v-img
-                  src="../../assets/portfolio/Logos/TARGET-PUBLICITY-SF.png"
-                  class="imagen"
-                ></v-img>
-              </h2> -->
               <p class="section-description custom-style">
                 ¡EL EQUIPO DE TRABAJO IDEAL PARA IMPULSAR TU NEGOCIO!
               </p>
@@ -161,14 +155,6 @@ export default {
   color: #333;
   font-weight: bold;
   text-transform: uppercase;
-  font-family: monospace;
-}
-
-ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding-left: 0;
 }
 
 .team-card {
@@ -185,11 +171,11 @@ ul {
 
 .team-component {
   font-size: 3vh;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #000000;
   max-height: 700px;
   background-image: url("../../assets/portfolio/variadas/fondoblanco1.jpg");
   background-size: cover;
+  font-family: "Inter", sans-serif;
 }
 
 .icon-items {
@@ -201,9 +187,8 @@ ul {
   width: max-content;
   white-space: nowrap;
   border-right: 2px solid;
-  font-family: monospace;
   font-size: 20px;
-  animation: efecto 3s steps(16), efecto1 1s step-end infinite alternate;
+  animation: efecto 5s steps(16), efecto1 1s step-end infinite alternate;
 }
 
 @keyframes efecto {
@@ -221,23 +206,15 @@ ul {
   }
 }
 
-.team-subtitle {
+/* .team-subtitle {
   font-size: 15px;
-  font-family: monospace;
-}
+}  */
 
 @media screen and (min-width: 321px) and (max-width: 480px) {
-  .section-title {
-    height: 100px;
-    background-position: center bottom;
-  }
-
   .custom-style {
-    font-size: 15px;
+    font-size: 1.5rem;
     color: #333;
     font-weight: bold;
-    text-transform: uppercase;
-    font-family: monospace;
   }
 
   ul {
@@ -250,16 +227,13 @@ ul {
   .team-card {
     background: #d9d9d9;
     border-radius: 30px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     max-width: 300px;
     margin-top: 25px;
   }
 
   .team-component {
-    font-size: 3vh;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #000000;
+    font-size: 2rem;
     max-height: 100%;
   }
 
@@ -484,12 +458,10 @@ ul {
     color: #333;
     font-weight: bold;
     text-transform: uppercase;
-    font-family: monospace;
   }
 
   .team-subtitle {
     font-size: 20px;
-    font-family: monospace;
   }
 
   ul {
@@ -509,7 +481,6 @@ ul {
   }
 
   .team-component {
-    font-family: monospace;
     color: #000000;
     height: auto;
   }

@@ -110,26 +110,23 @@ export default {
   background-image: url("../../assets/portfolio/images2/services-bg-3000.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  font-family: "Inter", sans-serif;
 }
 
 .section-title {
   font-size: 15px;
-  font-family: monospace;
   color: #ffff;
 }
 .subsection-title {
   font-size: 30px;
-  font-family: monospace;
   color: #ffff;
 }
 .testimonios {
   font-size: 15px;
-  font-family: monospace;
   color: #000000;
 }
 .nombretest {
   font-size: 15px;
-  font-family: monospace;
   color: #000000;
 }
 
@@ -144,7 +141,7 @@ export default {
 
 @media screen and (min-width: 321px) and (max-width: 480px) {
   .testimonial-component {
-    max-height: 500px;
+    max-height: auto;
     overflow: hidden;
   }
 
@@ -159,7 +156,7 @@ export default {
     color: #ffff;
   }
   .testimonios {
-    font-size: 12px;
+    font-size: 2.3vh;
     font-family: monospace;
     color: #000000;
     margin-bottom: 10px;
@@ -188,10 +185,9 @@ export default {
   .carrusel{
     box-shadow: 0px 15px 15px rgba(2, 2, 2, 0.1);
     border-radius: 15px; 
-    max-height: 240px;
+    max-height: 250px;
   }
 }
-
 @media screen and (min-width: 481px) and (max-width: 599px) {
   .testimonial-component {
     max-height: 500px;
@@ -236,7 +232,6 @@ export default {
     max-height: 240px;
   }
 }
-
 @media screen and (min-width: 600px) and (max-width: 768px) {
   .testimonial-component {
     height: 450px;
@@ -326,7 +321,6 @@ export default {
     border-radius: 25px; 
   }
 }
-
 @media screen and (min-width: 960px) and (max-width: 1023px) {
   .testimonial-component {
     max-height: 450px;
@@ -372,7 +366,6 @@ export default {
     border-radius: 15px; 
   }
 }
-
 @media screen and (min-width: 1024px) and (max-width: 1199px) {
   .testimonial-component {
     max-height: 450px;
@@ -419,29 +412,25 @@ export default {
 }
 @media screen and (min-width: 1200px) and (max-width: 1440px) {
   .testimonial-component {
-    height: 450px;
+    height: 400px;
     overflow: hidden;
   }
 
   .section-title {
     font-size: 15px;
-    font-family: monospace;
     color: #ffff;
   }
   .subsection-title {
     font-size: 30px;
-    font-family: monospace;
     color: #ffff;
   }
   .testimonios {
     font-size: 15px;
-    font-family: monospace;
     color: #000000;
     margin-bottom: 10px;
   }
   .nombretest {
     font-size: 20px;
-    font-family: monospace;
     color: #000000;
   }
 
@@ -459,7 +448,7 @@ export default {
   .carrusel{
     box-shadow: 0px 15px 15px rgba(2, 2, 2, 0.1);
     border-radius: 15px; 
-    max-height: 300px;
+    max-height: 250px;
   }
 }
 </style>

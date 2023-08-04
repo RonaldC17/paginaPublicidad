@@ -1,14 +1,13 @@
 <template>
-  <v-parallax
+  <div
     src="../../assets/portfolio/img/Img2.jpg"
-    class="cajaagregados text-center"
-  >
-    <div class="feature1-component mini-spacer">
+    class="cajaagregados text-center">
+    <div>
       <v-container>
         <v-row align="center" justify="center" no-gutters>
           <v-col cols="12" md="12" lg="12" class="text-center mt-sm-15">
             <h4 class="tituloagregados">
-              <b class=""> Valores Agregados </b>
+              <b> Valores Agregados </b>
             </h4>
           </v-col>
           <v-row no-gutters>
@@ -40,7 +39,7 @@
         </v-row>
       </v-container>
     </div>
-  </v-parallax>
+  </div>
 </template>
 
 <script>
@@ -76,15 +75,17 @@ export default {
 </script>
 
 <style scoped>
-.tituloagregados {
+
+.cajaagregados{
+  font-family: "Inter", sans-serif;
+}
+/* .tituloagregados {
   font-size: 30px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #ffffff;
 }
 
 .titulocard {
   font-size: 20px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #07a5c3;
 }
 
@@ -103,39 +104,37 @@ export default {
 
 .descripcioncard {
   font-size: 15px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .imagen-img {
   width: 100%;
   max-height: 300px;
   background-position: center bottom;
-}
+} */
 
 @media screen and (min-width: 321px) and (max-width: 480px) {
   .cajaagregados {
-    max-height: 1500px;
+    height: auto;
+    background: #07a5c3;
   }
 
   .tituloagregados {
-    font-size: 30px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2rem;
     color: #ffffff;
+    margin-top: 25px;
   }
 
   .titulocard {
-    font-size: 15px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2rem;
     color: #07a5c3;
   }
 
   .pricing-card {
     background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
     transition: transform 0.3s ease;
     width: 280px;
-    height: 300px;
+    height: 350px;
     margin-top: 50px;
   }
 
@@ -144,8 +143,7 @@ export default {
   }
 
   .descripcioncard {
-    font-size: 12px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: .9rem;
   }
 
   .imagen-img {
@@ -233,8 +231,6 @@ export default {
   .pricing-card:hover {
     transform: translateY(-5px);
   }
-
-  
 
   .imagen-img {
     width: 100%;
@@ -378,18 +374,22 @@ export default {
 @media screen and (min-width: 1200px) and (max-width: 1440px) {
   .cajaagregados {
     height: auto;
+    background: #07a5c3;
+    border-radius:  0 0 150vh 150vh;
+    padding: 20px; 
+    display: flex;
+    justify-content: space-around;
+    font-family: "Inter", sans-serif;
   }
 
   .tituloagregados {
-    font-size: 30px;
-    font-family: monospace;
+    font-size: 40px;
     color: #ffffff;
     margin-bottom: 50px;
   }
 
   .titulocard {
     font-size: 25px;
-    font-family: monospace;
     color: #07a5c3;
   }
 
@@ -412,7 +412,6 @@ export default {
   .descripcioncard {
     margin-top: 10px;
     font-size: 15px;
-    font-family: monospace;
   }
 
   .imagen-img {

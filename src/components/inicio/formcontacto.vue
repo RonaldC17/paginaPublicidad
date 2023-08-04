@@ -1,7 +1,7 @@
 <template>
   <div class="cajaformulario">
     <v-container>
-      <v-row no-gutters class="mt-lg-5">
+      <v-row no-gutters class="mt-lg-5 mt-xs-5">
         <v-col cols="12" lg="12" md="12" xl="12" class="text-center">
           <div class="tituloformulario">
             <h2>Pregunta tu Plan</h2>
@@ -163,11 +163,11 @@ const submit = handleSubmit((values) => {
 <style scoped>
 .cajaformulario {
   background: #d9d9d9;
+  font-family: "Inter", sans-serif;
 }
 
 .tituloformulario {
   font-size: 35px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #607d8b;
   transform: translateY(50px);
 }
@@ -375,10 +375,10 @@ form {
 @media screen and (min-width: 321px) and (max-width: 480px) {
 
   .tituloformulario {
-    font-size: 35px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2rem;
     color: #607d8b;
     transform: translateY(50px);
+    margin-bottom: 50px;
   }
 
   #contactos {
@@ -404,6 +404,7 @@ form {
     display: flex;
     max-width: 200px;
     max-height: 50px;
+    margin-top: 25px;
   }
   #btn::before {
     content: "";
@@ -444,7 +445,6 @@ form {
     }
   }
 }
-
 @media screen and (min-width: 481px) and (max-width: 599px) {
   .tituloformulario {
     font-size: 35px;
@@ -516,7 +516,6 @@ form {
     }
   }
 }
-
 @media screen and (min-width: 600px) and (max-width: 768px) {
   .tituloformulario {
     font-size: 35px;
@@ -589,7 +588,6 @@ form {
     }
   }
 }
-
 @media screen and (min-width: 769px) and (max-width: 959px) {
   .tituloformulario {
     font-size: 35px;
@@ -662,7 +660,6 @@ form {
     }
   }
 }
-
 @media screen and (min-width: 960px) and (max-width: 1023px) {
   .tituloformulario {
     font-size: 35px;
@@ -807,7 +804,6 @@ form {
     }
   }
 }
-
 @media screen and (min-width: 1200px) and (max-width: 1440px) {
   .tituloformulario {
     font-size: 35px;

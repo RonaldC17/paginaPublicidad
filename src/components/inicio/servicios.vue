@@ -129,21 +129,18 @@ export default {
 
 @media screen and (min-width: 321px) and (max-width: 480px) {
   .tituloservicios {
-    font-size: 25px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5rem;
     color: #e7ebf7;
+    margin-bottom: 25px;
   }
 
   .subtituloservicios {
-    font-size: 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5rem;
     color: #07a5c3;
   }
 
   .textoservicios {
-    font-size: 14px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #000000;
+    font-size: 1rem;
   }
 
   .imagen {
@@ -155,14 +152,14 @@ export default {
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    width: 250px;
+    width: 300px;
   }
 
   .columnaservicios:hover {
     transform: translateY(-10px);
   }
   .cajaservicios {
-    max-height: 1250px;
+    height: auto;
   }
 }
 

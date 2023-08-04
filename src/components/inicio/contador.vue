@@ -77,7 +77,6 @@ export default {
   
   .counter-number {
     font-size: 50px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: azure;
     transition: 0.5s;
   }
@@ -88,13 +87,14 @@ export default {
   
   .counter-label {
     font-size: 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: azure;
   }
   
   .contadorcaja {
     background: #303c36;
     transition: 0.5s;
+    border-radius: 0 0 0 0;
+    font-family: "Inter", sans-serif;
   }
   
   .contadorcaja.hovered {

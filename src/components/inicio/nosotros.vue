@@ -43,19 +43,17 @@ export default {
 <style scoped>
 .cajanosotros {
   background: #303c36;
-  
+  font-family: "Inter", sans-serif;
 }
 .sobrenosotros-title {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #000000;
 }
 
 .sobrenosotros-description {
   font-size: 15px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #000000;
 }
 
@@ -71,12 +69,10 @@ export default {
   }
   .sobrenosotros-title {
     font-size: 30px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #000000;
   }
   .sobrenosotros-description {
     font-size: 30px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #000000;
   }
 }
@@ -85,13 +81,11 @@ export default {
 @media screen and (min-width: 321px) and (max-width: 480px) {
   .sobrenosotros-title {
     font-size: 1.5rem;
-    font-family: monospace;
     color: #ffffff;
     margin-top: 10px;
   }
   .sobrenosotros-description {
     font-size: 1rem;
-    font-family: monospace;
     color: #ffffff;
     margin-top: 30px;
     margin-left: 25px;
@@ -109,13 +103,11 @@ export default {
 @media screen and (min-width: 481px) and (max-width: 599px) {
   .sobrenosotros-title {
     font-size: 1.5rem;
-    font-family: monospace;
     color: #ffffff;
     margin-top: 10px;
   }
   .sobrenosotros-description {
     font-size: 1rem;
-    font-family: monospace;
     color: #ffffff;
     margin-top: 30px;
     margin-left: 25px;
@@ -132,13 +124,11 @@ export default {
 @media screen and (min-width: 600px) and (max-width: 768px) {
   .sobrenosotros-title {
     font-size: 1.5rem;
-    font-family: monospace;
     color: #ffffff;
     margin-top: 10px;
   }
   .sobrenosotros-description {
     font-size: 1rem;
-    font-family: monospace;
     color: #ffffff;
     margin-top: 30px;
     margin-left: 25px;
@@ -157,13 +147,11 @@ export default {
 @media screen and (min-width: 769px) and (max-width: 959px) {
   .sobrenosotros-title {
     font-size: 1.5rem;
-    font-family: monospace;
     color: #ffffff;
     margin-top: 10px;
   }
   .sobrenosotros-description {
     font-size: 1rem;
-    font-family: monospace;
     color: #ffffff;
     margin-top: 30px;
     margin-left: 25px;
@@ -183,13 +171,11 @@ export default {
 @media screen and (min-width: 960px) and (max-width: 1023px) {
   .sobrenosotros-title {
     font-size: 2rem;
-    font-family: monospace;
     color: #ffffff;
     margin-top: 10px;
   }
   .sobrenosotros-description {
     font-size: 1.5rem;
-    font-family: monospace;
     color: #ffffff;
     margin-top: 30px;
     margin-left: 50px;
@@ -209,13 +195,11 @@ export default {
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
   .sobrenosotros-title {
     font-size: 2.5rem;
-    font-family: monospace;
     color: #ffffff;
     margin-top: 10px;
   }
   .sobrenosotros-description {
     font-size: 2rem;
-    font-family: monospace;
     color: #ffffff;
     margin-top: 30px;
     margin-left: 50px;
@@ -234,17 +218,14 @@ export default {
 /* Pantallas de 1280 a 1440px*/
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
   .sobrenosotros-title {
-    font-size: 2vw;
-    font-family: monospace;
+    font-size: 2rem;
     color: #ffffff;
-    margin-top: 15%;
   }
   .sobrenosotros-description {
-    font-size: 1.3vw;
-    font-family: monospace;
+    font-size: 1.1rem;
     color: #ffffff;
-    margin-top: 40px;
-    margin-bottom: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
   }
   .cajanosotros {
     max-height: 100%;
@@ -262,12 +243,10 @@ export default {
   }
   .sobrenosotros-title {
     font-size: 40px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #000000;
   }
   .sobrenosotros-description {
     font-size: 40px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #000000;
   }
 }

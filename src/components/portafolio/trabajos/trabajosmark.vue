@@ -11,7 +11,7 @@
             </div>
           </v-col>
         </v-row>
-        <v-row class="" no-gutters>
+        <v-row no-gutters>
           <v-col
             cols="12"
             md="4"
@@ -42,15 +42,9 @@
             </v-card>
           </v-col>
         </v-row>
-        <!-- <v-row justify="center" no-gutters>
-          <v-col cols="12" md="12" lg="12" xl="12">
-            <div class="text-center">
-              <router-link to="/todoslostrabajos">
-                <v-btn color="primary">Ver Proyectos</v-btn>
-              </router-link>
-            </div>
-          </v-col>
-        </v-row> -->
+        <v-row justify="center" align="center">
+           <router-link to="/marketingdigital" class="link px-sm-4 ps-0"> Más Proyectos </router-link>
+        </v-row>
       </v-container>
     </div>
   </div>

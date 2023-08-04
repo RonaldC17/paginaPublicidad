@@ -7,10 +7,12 @@
           sm="10"
           md="9"
           lg="7"
-          class="text-center tituloplanes mt-lg-10"
-        >
-          <h2>
+          class="text-center tituloplanes mt-lg-10 mb-lg-n5">
+          <h3>
             <b> Planes </b>
+          </h3>
+          <h2>
+            <b> Marketing Digital </b>
           </h2>
         </v-col>
       </v-row>
@@ -20,24 +22,11 @@
           md="4"
           sm="6"
           v-for="(card, index) in pricePlan"
-          :key="index"
-        >
+          :key="index">
           <v-card
             outlineds
-            class="pricing-card overflow-hidden ml-5 mr-5 mt-xs-n5"
-          >
+            class="pricing-card overflow-hidden ml-5 mr-5 mt-xs-n5">
             <div class="text-center pa-lg-6 mt-5" id="title">
-              <v-col
-                cols="12"
-                md="12"
-                sm="12"
-                class="titulos mb-5"
-                align="center"
-              >
-                <h5>
-                  <b> Marketing Digital </b>
-                </h5>
-              </v-col>
               <v-img
                 class="img-planes"
                 cover
@@ -53,24 +42,26 @@
                 <span class="precio">{{ card.price }}</span>
               </div>
               <div class="mt-1">
-                <span class="plan">{{ card.plan }}</span>
+                <h6 class="plan">
+                  <b> {{ card.plan }} </b>
+                </h6>
               </div>
-              <br>
+              <br />
               <hr
                 class="mx-xs-auto ml-lg-15 mr-lg-15 ml-xs-1 mr-xs-1 divisor"
               />
-              <p class="mt-5 descripcionmd">{{ card.desc }}</p>
-              <p class="mt-5 descripcionmd">{{ card.desc1 }}</p>
-              <p class="mt-5 descripcionmd">{{ card.desc2 }}</p>
-              <p class="mt-5 descripcionmd">{{ card.desc3 }}</p>
-              <p class="mt-5 descripciondw">{{ card.desc4 }}</p>
-              <p class="mt-5 descripciondw">{{ card.desc5 }}</p>
-              <p class="mt-5 descripciondw">{{ card.desc6 }}</p>
-              <p class="mt-5 descripciondw">{{ card.desc7 }}</p>
+              <p
+                class="mt-5 descripcionmd"
+                v-for="(desc, index) in card.descriptions"
+                :key="index"
+              >
+                <v-icon v-if="card.icon">{{ card.icon }}</v-icon>
+                {{ desc }}
+              </p>
             </div>
             <hr class="ml-lg-15 mr-lg-15 divisor" />
-            <div class="text-center mt-lg-10">
-              <v-btn class="boton mx-auto" @click="openWhatsApp(card.title)">
+            <div class="text-center mt-lg-5 mb-lg-5">
+              <v-btn class="boton" @click="openWhatsApp(card.title)">
                 <p>Escoger Plan</p>
               </v-btn>
             </div>
@@ -79,6 +70,21 @@
       </v-row>
       <br />
       <br />
+      <v-row justify="center" no-gutters>
+        <v-col
+          cols="12"
+          sm="10"
+          md="9"
+          lg="7"
+          class="text-center tituloplanes mt-lg-10 mb-lg-n5">
+          <h3>
+            <b> Planes </b>
+          </h3>
+          <h2>
+            <b> Desarrollo Web </b>
+          </h2>
+        </v-col>
+      </v-row>
       <v-row class="mt-lg-7" justify="center" no-gutters>
         <v-col
           cols="12"
@@ -91,17 +97,6 @@
         >
           <v-card outlineds class="pricing-card ml-5 mr-5 mt-5">
             <div class="text-center pa-lg-6" id="title">
-              <v-col
-                cols="12"
-                md="12"
-                sm="12"
-                class="titulos mb-5"
-                align="center"
-              >
-                <h5>
-                  <b> Desarrollo Web</b>
-                </h5>
-              </v-col>
               <v-img
                 class="img-planes"
                 cover
@@ -114,16 +109,26 @@
               </h3>
               <div class="mt-5">
                 <sup class="text-muted">$</sup>
-                <p class="precio">{{ card.price }}</p>
+                <span class="precio">{{ card.price }}</span>
               </div>
+              <div class="mt-1">
+                <h6 class="plan">
+                  <b> {{ card.plan }} </b>
+                </h6>
+              </div>
+              <br />
               <hr class="ml-lg-15 mr-lg-15 divisor" />
-              <p class="mt-5 descripciondw">{{ card.desc }}</p>
-              <p class="mt-5 descripciondw">{{ card.desc1 }}</p>
-              <p class="mt-5 descripciondw">{{ card.desc2 }}</p>
-              <p class="mt-5 descripciondw">{{ card.desc3 }}</p>
+              <p
+                class="mt-5 descripciondw"
+                v-for="(desc, index) in card.descriptions"
+                :key="index"
+              >
+                <v-icon v-if="card.icon">{{ card.icon }}</v-icon>
+                {{ desc }}
+              </p>
             </div>
             <hr class="ml-lg-15 mr-lg-15 divisor" />
-            <div class="text-center mt-lg-5">
+            <div class="text-center mt-lg-5 mb-lg-5">
               <v-btn class="boton mx-auto" @click="openWhatsApp(card.title)">
                 <p>Escoger Plan</p>
               </v-btn>
@@ -144,79 +149,90 @@ export default {
           img: "cm.png",
           title: "Comunity Manager",
           price: "500.000",
-          desc: "Comunicación activa con la comunidad.",
-          desc1: "Gestión de Redes Sociales",
-          desc2: "Edición de videos (2).",
-          desc3: "Diseño de post publicitarios (15) para Instagram y facebook.",
-          desc4: "Diseño formato Historias (5).",
-          desc5: "Manejo de hashtag.",
-        },
-        {
-          img: "google.png",
-          title: "Google ADS",
-          price: "500.000",
-          plan: "Inversión pauta semanal desde: $ 200.000",
-          desc: "Investigación de la buyer persona.",
-          desc1:
-            "Analisis y selección de palabras clave para campaña de busqueda.",
-          desc2: "Campaña de Red de búsqueda.",
-          desc3:
-            "Integración Google Tag Manager para seguimiento de conversiones y visitas.",
-          desc4: "Integración de google Analytics.",
+          icon: "mdi-check",
+          descriptions: [
+            "Comunicación activa con la comunidad.",
+            "Gestión de Redes Sociales",
+            "Edición de videos (2).",
+            "Diseño de post publicitarios (15) para Instagram y facebook.",
+            "Diseño formato Historias (5).",
+            "Manejo de hashtag.",
+          ],
         },
         {
           img: "media.png",
           title: "Social Media ADS",
           price: "500.000",
-          plan: "Inversión pauta semanal desde: $ 120.000",
-          desc: "Objetivo de campaña según en el requerimiento de la empresa.",
-          desc1: "Escalamiento de campañas.",
-          desc2: "Diseño de post publicitarios.",
-          desc3: "Campaña en Instagram, Facebook.",
-          desc4: "Campaña de retargeting.",
-          desc5: "Integración pixel de facebook.",
-          desc6: "Creación de cuentas como perfiles comerciales.",
-          desc7: "Informes de rendimiento.",
+          plan: "Inversión pauta semanal desde: $120.000",
+          icon: "mdi-check",
+          descriptions: [
+            "Objetivo de campaña según en el requerimiento de la empresa.",
+            "Escalamiento de campañas.",
+            "Diseño de post publicitarios.",
+            "Campaña en Instagram, Facebook.",
+            "Campaña de retargeting.",
+            "Integración pixel de facebook.",
+            "Creación de cuentas como perfiles comerciales.",
+            "Informes de rendimiento.",
+          ],
         },
+        {
+          img: "google.png",
+          title: "Google ADS",
+          price: "500.000",
+          plan: "Inversión pauta semanal desde: $200.000",
+          icon: "mdi-check",
+          descriptions: [
+            "Investigación de la buyer persona.",
+            "Analisis y selección de palabras clave para campaña de busqueda.",
+            "Campaña de Red de búsqueda.",
+            "Integración Google Tag Manager para seguimiento de conversiones y visitas.",
+            "Integración de google Analytics.",
+          ],
+        },
+        
       ],
       pricePlan1: [
         {
           img: "fotopc1.png",
           title: "Landing Page",
           price: "500.000",
-          desc: "Crea una página web cautivadora para atraer a tus clientes de manera efectiva.",
-          desc1:
-            "Realizamos un seguimiento constante para asegurar el máximo rendimiento de tu Landing Page",
-          desc2:
-            "Incluye hosting y dominio configurado (cubierto por la empresa dueña).",
-          desc3:
+          plan: "Inversión Inicial desde: $200.000",
+          icon: "mdi-check",
+          descriptions: [
+            "Crea una página web cautivadora para atraer a tus clientes de manera efectiva.",
+            "Hosting + Dominio con Certificado SSl.",
+            "Correo corporativo, enlaces a las redes sociales y posibilidad de creación de más páginas.",
             "Entregamos una página web completa, junto con copias de seguridad y documentación detallada.",
+          ],
+        },
+        {
+          img: "carromorado.png",
+          title: "Tienda Online",
+          price: "650.000",
+          plan: "Inversión Inicial desde: $200.000",
+          icon: "mdi-check",
+          descriptions: [
+            "Impulsa las ventas de tus productos con una página web personalizada.",
+            "Hosting + Dominio con Certificado SSl.",
+            "Correo corporativo, enlaces a las redes sociales. (Incluye Manejo de productos, pasarelas de pago).",
+            "Entregamos una página web completa, junto con copias de seguridad y documentación detallada.",
+          ],
         },
         {
           img: "fotomorada2.png",
           title: "Página Profesional",
           price: "500.000",
-
-          desc: "Destaca tu negocio con una página web profesional para mostrar a tus clientes",
-          desc1:
-            "Realizamos un seguimiento constante para asegurar el máximo rendimiento de tu página web profesional",
-          desc2:
-            "Incluye hosting y dominio configurado (cubierto por la empresa dueña).",
-          desc3:
+          plan: "Inversión Inicial desde: $200.000",
+          icon: "mdi-check",
+          descriptions: [
+            "Destaca tu negocio con una página web profesional para mostrar a tus clientes",
+            "Hosting + Dominio con Certificado SSl.",
+            "Correo corporativo, enlaces a las redes sociales y posibilidad de creación de más páginas.",
             "Entregamos una página web completa, junto con copias de seguridad y documentación detallada.",
+          ],
         },
-        {
-          img: "carromorado.png",
-          title: "Tienda Online",
-          price: "800.000",
-          desc: "Impulsa las ventas de tus productos con una página web personalizada.",
-          desc1:
-            "Realizamos un seguimiento constante para asegurar el máximo rendimiento de tu tienda online",
-          desc2:
-            "Incluye hosting y dominio configurado (cubierto por la empresa dueña).",
-          desc3:
-            "Te proporcionamos una página completa, junto con copias de seguridad y documentación detallada.",
-        },
+        
       ],
     };
   },
@@ -235,22 +251,24 @@ export default {
 </script>
 
 <style scoped>
-
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 .containerplanes {
   background: #dfe3e4;
   background-size: cover;
   background-repeat: no-repeat;
+  font-family: "Inter", sans-serif;
+}
+.tituloplanes h3 {
+  color: #000000;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 25px;
 }
 .tituloplanes h2 {
-  font-size: 40px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #000000;
-}
-
-.titulos {
-  font-size: 12px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
 }
 
 /* .pricing-card {
@@ -260,7 +278,7 @@ export default {
   height: 600px;
 } */
 
-.pricing-card:hover {
+/* .pricing-card:hover {
   transform: translateY(-10px);
   background: #ffffff;
   transition: all 0.3s ease;
@@ -268,7 +286,6 @@ export default {
 }
 
 .precio {
-  font-family: "Lato Black", sans-serif;
   font-weight: bold;
 }
 
@@ -291,12 +308,11 @@ export default {
 .img-planes {
   width: 60px;
   height: 60px;
-}
+} */
 
 @media screen and (min-width: 321px) and (max-width: 480px) {
   .titulos {
     font-size: 12px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 
   .divisor {
@@ -322,28 +338,33 @@ export default {
   }
 
   .precio {
-    font-size: 35px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2rem;
   }
 
   .descripciondw {
-    font-size: 13px;
-    margin-left: 50px;
-    margin-right: 50px;
+    font-size: 1.1rem;
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: justify;
   }
 
   .descripcionmd {
-    font-size: 13px;
-    margin-left: 50px;
-    margin-right: 50px;
+    font-size: 1.1rem;
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: justify;
+  }
+
+  .plan{
+    font-size: 1.3rem;
   }
 
   #title h3 {
-    font-size: 20px;
+    font-size: 1rem;
   }
 
   .boton p {
-    font-size: 15px;
+    font-size: 1rem;
     color: #eceff1;
   }
 
@@ -368,7 +389,7 @@ export default {
 @media screen and (min-width: 481px) and (max-width: 599px) {
   .titulos {
     font-size: 12px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: monospace;
   }
 
   .divisor {
@@ -440,7 +461,7 @@ export default {
 @media screen and (min-width: 600px) and (max-width: 767px) {
   .titulos {
     font-size: 12px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: monospace;
   }
 
   .divisor {
@@ -512,7 +533,7 @@ export default {
 @media screen and (min-width: 768px) and (max-width: 959px) {
   .titulos {
     font-size: 12px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: monospace;
   }
 
   .divisor {
@@ -657,7 +678,7 @@ export default {
 @media screen and (min-width: 1024px) and (max-width: 1199px) {
   .titulos {
     font-size: 10px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: monospace;
   }
 
   .divisor {
@@ -726,10 +747,6 @@ export default {
   }
 }
 @media screen and (min-width: 1200px) and (max-width: 1440px) {
-  .titulos {
-    font-size: 10px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
 
   .divisor {
     background-color: #2c015a;
@@ -743,6 +760,7 @@ export default {
     box-shadow: 0 20px 55px rgba(0, 0, 0, 0.1);
     transition: all 0.8s ease;
     height: auto;
+    
   }
 
   .pricing-card:hover {
@@ -752,9 +770,12 @@ export default {
   }
 
   .precio {
-    font-family: "Lato Black", sans-serif;
     font-weight: bold;
     font-size: 2rem;
+  }
+
+  .plan {
+    font-size: 1rem;
   }
 
   .descripciondw {
@@ -764,17 +785,17 @@ export default {
   }
 
   .descripcionmd {
-    font-size: 1.2rem;
-    margin-left: 10%;
-    margin-right: 10%;
+    font-size: 1.1rem;
+    margin-left: 2%;
+    margin-right: 2%;
   }
 
   #title h3 {
-    font-size: 20px;
+    font-size: 2.5vh;
   }
 
   .boton p {
-    font-size: 15px;
+    font-size: 2vh;
     color: #eceff1;
   }
 
@@ -782,7 +803,6 @@ export default {
     border-radius: 50px;
     background-color: #2c015a;
     transition: all 0.8s ease;
-    margin-top: 40px;
   }
 
   .boton:hover {
